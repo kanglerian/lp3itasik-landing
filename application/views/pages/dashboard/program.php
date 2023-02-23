@@ -23,7 +23,7 @@
         <select name="level" id="level" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
           <option>Pilih jenjang</option>
           <option value="D3">D3</option>
-          <option value="Teknik Vokasi 2 Tahun">Teknik Vokasi 2 Tahun</option>
+          <option value="Vokasi 2 Tahun">Vokasi 2 Tahun</option>
         </select>
         <select name="status" id="status" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
           <option>Pilih</option>
