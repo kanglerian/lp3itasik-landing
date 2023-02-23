@@ -78,7 +78,7 @@
                 <!-- Toggle -->
                 <a role="button" href="<?= base_url() ?>information/change/<?= $information->id ?>" class="block md:inline text-center text-white px-2 py-1 text-sm rounded <?= $information->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $information->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>
                 <!-- Edit -->
-                <a role="button" onclick="editInformation('<?= $information->id ?>','<?= $information->title ?>','<?= $information->youtube ?>','<?= $information->description ?>','<?= $information->status ?>')" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a role="button" onclick="editInformation(`<?= $information->id ?>`,`<?= $information->title ?>`,`<?= $information->description ?>`,`<?= $information->youtube ?>`,`<?= $information->status ?>`)" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
                 <!-- Delete -->
                 <a role="button" data-modal-target="popup-modal<?= $information->id ?>" data-modal-toggle="popup-modal<?= $information->id ?>" class="block md:inline text-center bg-red-600 px-2 py-1 text-sm rounded text-white"><i class="fa-solid fa-trash"></i></a>
                 <!-- Delete Modal -->
@@ -115,7 +115,7 @@
 
 
 <script>
-  const editInformation = (id, title, youtube, desc) => {
+  const editInformation = (id, title, desc, youtube, status) => {
     let titleInput = document.getElementById('title');
     let youtubeInput = document.getElementById('youtube');
     let descInput = document.getElementById('description');

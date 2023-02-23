@@ -80,7 +80,7 @@
                 <!-- Toggle -->
                 <a role="button" href="<?= base_url() ?>documentation/change/<?= $documentation->id ?>" class="block md:inline text-center text-white px-2 py-1 text-sm rounded <?= $documentation->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $documentation->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>
                 <!-- Edit -->
-                <a role="button" onclick="editInformation('<?= $documentation->id ?>','<?= $documentation->title ?>','<?= $documentation->status ?>')" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a role="button" onclick="editInformation(`<?= $documentation->id ?>`,`<?= $documentation->title ?>`,`<?= $documentation->status ?>`)" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
                 <!-- Delete -->
                 <a role="button" data-modal-target="popup-modal<?= $documentation->id ?>" data-modal-toggle="popup-modal<?= $documentation->id ?>" class="block md:inline text-center bg-red-600 px-2 py-1 text-sm rounded text-white"><i class="fa-solid fa-trash"></i></a>
                 <div id="popup-modal<?= $documentation->id ?>" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">

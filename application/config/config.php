@@ -24,6 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 $config['base_url'] = 'https://naon.politekniklp3i-tasikmalaya.ac.id/';
+/* $config['base_url'] = 'http://localhost/lp3itasik'; */
 
 /*
 |--------------------------------------------------------------------------
