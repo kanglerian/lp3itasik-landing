@@ -90,7 +90,7 @@
                 <img src="<?= base_url() ?>uploads/<?= $program->image ?>" class="w-44 rounded">
               </th>
               <th scope="row" class="px-6 py-4 font-medium text-gray-900">
-                <span><?= $program->title ?> <?= $program->level ?></span><br>
+                <span><?= $program->level ?> <?= $program->title ?></span><br>
                 <span class="font-light text-gray-500"><?= $program->campus ?></span><br>
                 <p class="text-gray-500 font-normal text-xs mt-2 text-justify"><?= $program->description ?></p>
               </th>
