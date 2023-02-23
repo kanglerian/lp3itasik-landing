@@ -76,7 +76,7 @@
                 <?= $number + 1 ?>
               </td>
               <th scope="row" class="px-6 py-4">
-                <img src="<?= base_url() ?>uploads/<?= $student->image ?>" class="w-44 rounded-2xl">
+                <img src="<?= base_url() ?>uploads/<?= $student->image ?>" class="w-44 rounded-lg">
               </th>
               <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                 <?= $student->title ?><br>
