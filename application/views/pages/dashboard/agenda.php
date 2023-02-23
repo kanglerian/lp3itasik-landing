@@ -14,13 +14,15 @@
     </div>
     <div class="flex-1">
       <div class="flex flex-col gap-2">
-        <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">
-        <small class="mt-2 text-xs text-gray-500 dark:text-gray-400"><span class="font-medium">Ketentuan:</span> 1080(px) x 1080(px) maksimal 1MB (1000KB)</small>
         <select name="status" id="status" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
           <option>Pilih</option>
           <option value="1">Aktif</option>
           <option value="0">Tidak aktif</option>
         </select>
+        <div>
+          <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">
+          <small class="mt-2 text-xs text-gray-500 dark:text-gray-400"><span class="font-medium">Ketentuan:</span> 1080(px) x 1080(px) maksimal 1MB (1000KB)</small>
+        </div>
       </div>
     </div>
     <div>
