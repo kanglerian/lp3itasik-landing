@@ -16,8 +16,9 @@ class Media_model extends CI_Model
     }
 
     public function get_active_records()
-    {
+    {   
         $query = $this->db->get_where('medias', ['status' => 1]);
+        $query->order_by('date','DESC');
         return $query->result();
     }
 
