@@ -20,7 +20,7 @@
 			<?php } else { ?>
 
 				<div class="duration-700 ease-in-out">
-					<img src="<?= base_url() ?>public/img/bg.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg" alt="Politeknik LP3I Kampus Tasikmalaya">
+					<img src="<?= base_url() ?>public/img/banner-default.jpg" class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2 rounded-lg" alt="Politeknik LP3I Kampus Tasikmalaya">
 				</div>
 
 			<?php } ?>
