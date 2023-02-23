@@ -35,7 +35,7 @@
 	<div class="container mx-auto px-4">
 		<div class="flex flex-col md:flex-row justify-center items-center gap-8">
 			<div class="basis-1/3">
-				<img src="<?= base_url() ?>public/img/bg.jpg" alt="" class="bg-white p-2 rounded-2xl shadow">
+				<img src="<?= base_url() ?>public/img/banner-default.jpg" alt="" class="bg-white p-2 rounded-2xl shadow">
 			</div>
 			<div class="basis-1/2">
 				<h3 class="font-bold text-3xl mt-2">Apa itu Pendidikan Vokasi?</h3>
@@ -50,7 +50,7 @@
 				<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">Simak selengkapnya</a>
 			</div>
 			<div class="basis-1/3">
-				<img src="<?= base_url() ?>public/img/bg.jpg" alt="" class="bg-white p-2 rounded-2xl shadow">
+				<img src="<?= base_url() ?>public/img/banner-default.jpg" alt="" class="bg-white p-2 rounded-2xl shadow">
 			</div>
 		</div>
 	</div>
@@ -63,7 +63,7 @@
 
 		<div class="flex flex-col md:flex-row justify-center items-center gap-8">
 			<div class="basis-1/3">
-				<img src="<?= base_url() ?>public/img/<?= $vision['image'] ?>" alt="" class="bg-white p-2 rounded-2xl shadow">
+				<img src="<?= base_url() ?>public/img/banner-default.jpg" alt="" class="bg-white p-2 rounded-2xl shadow">
 			</div>
 			<div class="basis-1/2">
 				<h3 class="font-bold text-3xl mt-2">Visi</h3>
@@ -72,7 +72,7 @@
 		</div>
 		<div class="flex flex-col md:flex-row justify-center items-center gap-8 mt-8">
 			<div class="basis-1/3">
-				<img src="<?= base_url() ?>public/img/<?= $mision['image'] ?>" alt="" class="bg-white p-2 rounded-2xl shadow">
+				<img src="<?= base_url() ?>public/img/banner-default.jpg" alt="" class="bg-white p-2 rounded-2xl shadow">
 			</div>
 			<div class="basis-1/2">
 				<h3 class="font-bold text-3xl mt-2">Misi</h3>
