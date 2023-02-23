@@ -157,7 +157,7 @@
 		</div>
 
 		<?php if (!empty($medias)) { ?>
-			<div class="flex flex-col md:flex-row justify-center gap-5 my-8">
+			<div class="flex flex-col md:flex-row md:flex-wrap justify-center gap-5 my-8">
 				<?php foreach ($medias as $media) { ?>
 					<div class="bg-white shadow rounded-xl p-5 md:w-1/3 ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300">
 						<img src="<?= base_url() ?>uploads/<?= $media->image ?>" alt=<?= $media->title ?>" class="rounded-lg">
