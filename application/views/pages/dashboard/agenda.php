@@ -7,21 +7,21 @@
   </div>
   <form id="form" action="<?= base_url() ?>agenda/insert" class="flex flex-col md:flex-row md:items-start gap-4 py-3 px-2" method="post" enctype="multipart/form-data">
     <div class="flex-1">
-      <input type="text" name="title" id="title" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" placeholder="Type title.." required>
+      <div class="flex flex-col gap-2">
+        <input type="text" name="title" id="title" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" placeholder="Type title.." required>
+        <input type="date" name="date" id="date" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
+      </div>
     </div>
     <div class="flex-1">
-      <input type="date" name="date" id="date" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
-    </div>
-    <div class="flex-1">
-      <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">
-      <small class="mt-2 text-xs text-gray-500 dark:text-gray-400"><span class="font-medium">Ketentuan:</span> 1080(px) x 1080(px) maksimal 1MB (1000KB)</small>
-    </div>
-    <div class="flex-2">
-      <select name="status" id="status" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
-        <option>Pilih</option>
-        <option value="1">Aktif</option>
-        <option value="0">Tidak aktif</option>
-      </select>
+      <div class="flex flex-col gap-2">
+        <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">
+        <small class="mt-2 text-xs text-gray-500 dark:text-gray-400"><span class="font-medium">Ketentuan:</span> 1080(px) x 1080(px) maksimal 1MB (1000KB)</small>
+        <select name="status" id="status" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
+          <option>Pilih</option>
+          <option value="1">Aktif</option>
+          <option value="0">Tidak aktif</option>
+        </select>
+      </div>
     </div>
     <div>
       <button type="submit" class="bg-cyan-600 text-white text-sm py-2 px-3 rounded-md"><i class="fa-solid fa-floppy-disk"></i> <span id="btnSubmit">Simpan</span></button>
