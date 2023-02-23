@@ -10,6 +10,9 @@
       <input type="text" name="title" id="title" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" placeholder="Type title.." required>
     </div>
     <div class="flex-1">
+      <input type="date" name="date" id="date" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
+    </div>
+    <div class="flex-1">
       <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">
       <small class="mt-2 text-xs text-gray-500 dark:text-gray-400"><span class="font-medium">Ketentuan:</span> 1080(px) x 1080(px) maksimal 1MB (1000KB)</small>
     </div>
@@ -75,12 +78,13 @@
               </th>
               <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                 <?= $agenda->title ?>
+                <?= $agenda->date ?>
               </th>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->
                 <a role="button" href="<?= base_url() ?>agenda/change/<?= $agenda->id ?>" class="block md:inline text-center text-white px-2 py-1 text-sm rounded <?= $agenda->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $agenda->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>
                 <!-- Edit -->
-                <a role="button" onclick="editInformation(`<?= $agenda->id ?>`,`<?= $agenda->title ?>`,`<?= $agenda->status ?>`)" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a role="button" onclick="editInformation(`<?= $agenda->id ?>`,`<?= $agenda->title ?>`,`<?= $agenda->date ?>`,`<?= $agenda->status ?>`)" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
                 <!-- Delete -->
                 <a role="button" data-modal-target="popup-modal<?= $agenda->id ?>" data-modal-toggle="popup-modal<?= $agenda->id ?>" class="block md:inline text-center bg-red-600 px-2 py-1 text-sm rounded text-white"><i class="fa-solid fa-trash"></i></a>
                 <div id="popup-modal<?= $agenda->id ?>" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
@@ -115,13 +119,15 @@
 </div>
 
 <script>
-  const editInformation = (id, title, status) => {
+  const editInformation = (id, title, date, status) => {
     let titleInput = document.getElementById('title');
+    let dateInput = document.getElementById('date');
     let statusInput = document.getElementById('status');
     let form = document.getElementById('form');
     let btnSubmit = document.getElementById('btnSubmit');
     let info = document.getElementById('info');
     titleInput.value = title;
+    dateInput.value = date;
     statusInput.value = status;
     btnSubmit.innerHTML = "Ubah";
     form.setAttribute("action", `<?= base_url() ?>agenda/update/${id}`);

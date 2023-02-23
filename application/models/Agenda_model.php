@@ -16,7 +16,8 @@ class Agenda_model extends CI_Model
     }
 
     public function get_active_records()
-    {
+    {   
+        $this->db->order_by('date','DESC');
         $query = $this->db->get_where('agendas', ['status' => 1]);
         return $query->result();
     }
@@ -46,6 +47,7 @@ class Agenda_model extends CI_Model
             $file = $this->upload->data();
             $data = [
                 'title' => $this->input->post('title'),
+                'date' => $this->input->post('date'),
                 'status' => $this->input->post('status'),
                 'image' => date("Ymdhis") . $file["file_ext"],
             ];
@@ -78,6 +80,7 @@ class Agenda_model extends CI_Model
             $data = [
                 'image' =>  date("Ymdhis") . $file_data["file_ext"],
                 'title' => $this->input->post('title'),
+                'date' => $this->input->post('date'),
                 'status' => $this->input->post('status'),
                 
             ];
@@ -95,6 +98,7 @@ class Agenda_model extends CI_Model
         } else {
             $data = [
                 'title' => $this->input->post('title'),
+                'date' => $this->input->post('date'),
                 'status' => $this->input->post('status'),
             ];
             $message = [
