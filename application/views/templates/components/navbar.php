@@ -35,7 +35,7 @@
     <div class="hidden w-full md:w-auto md:block transition duration-200 ease-in-out" data-attribute="0" id="navbar-dropdown">
       <ul class="flex flex-col mt-4 p-3 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
         <li>
-          <a href="<?= base_url() ?>" class="block md:inline py-2 pl-3 pr-4 font-bold text-cyan-700 md:p-0">Home</a>
+          <a href="<?= base_url() ?>" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == '/' ? 'font-bold' : 'font-medium' ?> text-gray-700 md:hover:text-cyan-700 md:p-0">Home</a>
         </li>
         <li>
           <button id="dropdownNavbarLink" data-dropdown-toggle="about" class="flex items-center justify-between w-full py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'about' ? 'font-bold' : 'font-medium' ?> text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-700 md:p-0 md:w-auto">Tentang Kampus <i class="ml-2 fa-solid fa-chevron-down"></i></button>
@@ -50,10 +50,10 @@
           </div>
         </li>
         <li>
-          <a href="<?= base_url() ?>programs" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'programs' ? 'font-bold' : '' ?> text-gray-700 md:p-0">Program Studi</a>
+          <a href="<?= base_url() ?>programs" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'programs' ? 'font-bold' : '' ?> text-gray-700 md:hover:text-cyan-700 md:p-0">Program Studi</a>
         </li>
         <li>
-          <a href="<?= base_url() ?>students" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'students' ? 'font-bold' : '' ?> text-gray-700 md:p-0">Organisasi Mahasiswa</a>
+          <a href="<?= base_url() ?>students" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'students' ? 'font-bold' : '' ?> text-gray-700 md:hover:text-cyan-700 md:p-0">Organisasi Mahasiswa</a>
         </li>
         <li>
           <button id="dropdownNavbarLink" data-dropdown-toggle="service" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-700 md:p-0 md:w-auto">Layanan <i class="ml-2 fa-solid fa-chevron-down"></i></button>

@@ -58,8 +58,7 @@ class About extends CI_Controller
 		];
 
 		$data['vision'] = [
-			'content' => "Pendidikan vokasi adalah pendidikan tinggi yang menunjang pada penguasaan keahlian terapan. Lulusan pendidikan vokasi akan mendapatkan gelar vokasi/gelar ahli madya.",
-			'image' => 'bg.jpg'
+			'content' => "Pendidikan vokasi adalah pendidikan tinggi yang menunjang pada penguasaan keahlian terapan. Lulusan pendidikan vokasi akan mendapatkan gelar vokasi/gelar ahli madya."
 		];
 
 		$data['mision'] = [
@@ -71,8 +70,7 @@ class About extends CI_Controller
 				'Mencetak sumber daya manusia yang siap kerja dengan kemampuan yang terampil dan profesional.',
 				'Mencetak sumber daya manusia yang siap kerja dengan kemampuan yang terampil dan profesional.',
 				'Mencetak sumber daya manusia yang siap kerja dengan kemampuan yang terampil dan profesional.',
-			],
-			'image' => 'potrait.jpg'
+			]
 		];
 
 		$this->load->view('templates/header');
