@@ -6,6 +6,6 @@ class Unknown extends CI_Controller
 
 	public function index()
 	{
-		redirect('about');
+		redirect('/');
 	}
 }
