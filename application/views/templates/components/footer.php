@@ -5,10 +5,10 @@
 					<img src="<?= base_url() ?>public/img/lp3i.svg" alt="" class="w-52">
 					<p class="text-sm text-gray-700 my-3">Jl. Ir. H. Juanda No.106, Panglayungan, Kec. Cipedes<br>Kota Tasikmalaya, Jawa Barat 46151</p>
 					<div class="flex gap-4 justify-start text-gray-600">
-						<a href="#"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
-						<a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a>
-						<a href="#"><i class="fa-brands fa-youtube fa-2x"></i></a>
-						<a href="#"><i class="fa-brands fa-whatsapp fa-2x"></i></a>
+						<a target="_blank" href="https://www.facebook.com/lp3itasik"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
+						<a target="_blank" href="https://www.instagram.com/lp3i.tasik/"><i class="fa-brands fa-instagram fa-2x"></i></a>
+						<a target="_blank" href="https://www.youtube.com/channel/UCX7vz8wEj4lHlVSbpYwC_nQ"><i class="fa-brands fa-youtube fa-2x"></i></a>
+						<a  target="_blank" href="https://www.tiktok.com/@lp3i.tasik"><i class="fa-brands fa-tiktok fa-2x"></i></a>
 					</div>
 				</div>
 				<div>
