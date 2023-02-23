@@ -74,5 +74,5 @@ $route['dashboard/about'] = 'dashboard/about';
 $route['dashboard/organization'] = 'dashboard/organization';
 $route['dashboard/facility'] = 'dashboard/facility';
 
-$route['404_override'] = '';
+$route['404_override'] = 'unknown';
 $route['translate_uri_dashes'] = FALSE;
