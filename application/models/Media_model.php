@@ -11,6 +11,7 @@ class Media_model extends CI_Model
 
     public function get_all_records()
     {
+        $this->db->order_by('date','DESC');
         $query = $this->db->get('medias');
         return $query->result();
     }
