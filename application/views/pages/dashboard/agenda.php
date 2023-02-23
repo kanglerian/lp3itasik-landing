@@ -80,7 +80,7 @@
               </th>
               <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                 <?= $agenda->title ?>
-                <?= $agenda->date ?>
+                <p class="text-gray-500 font-normal text-xs mt-1 text-justify"><?= date("d F Y", strtotime($agenda->date)) ?></p>
               </th>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->
