@@ -50,7 +50,7 @@
           </div>
         </li>
         <li>
-          <a href="<?= base_url() ?>programs" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'programs' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Program Nabila</a>
+          <a href="<?= base_url() ?>programs" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'programs' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Program Studi</a>
         </li>
         <li>
           <a href="<?= base_url() ?>students" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'students' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Organisasi Mahasiswa</a>
