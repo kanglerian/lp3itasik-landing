@@ -3,7 +3,7 @@
 			<div class="flex md:flex-row flex-col justify-between gap-5">
 				<div>
 					<img src="<?= base_url() ?>public/img/lp3i.svg" alt="" class="w-52">
-					<a target="_blank" href="https://goo.gl/maps/1dxJCzGBDvgNje8cA" class="block text-sm text-gray-700 my-3">Jl. Ir. H. Juanda No.106, Panglayungan, Kec. Cipedes<br>Kota Tasikmalaya, Jawa Barat 46151</a>
+					<a role="button" target="_blank" href="https://goo.gl/maps/1dxJCzGBDvgNje8cA" class="block text-sm text-gray-700 my-3">Jl. Ir. H. Juanda No.106, Panglayungan, Kec. Cipedes<br>Kota Tasikmalaya, Jawa Barat 46151</a>
 					<div class="flex gap-4 justify-start text-gray-600">
 						<a target="_blank" href="https://www.facebook.com/lp3itasik"><i class="fa-brands fa-facebook-f fa-2x"></i></a>
 						<a target="_blank" href="https://www.instagram.com/lp3i.tasik/"><i class="fa-brands fa-instagram fa-2x"></i></a>
