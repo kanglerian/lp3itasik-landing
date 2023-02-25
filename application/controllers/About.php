@@ -12,6 +12,7 @@ class About extends CI_Controller
 		$this->load->model('Banner_model');
 		$this->load->model('Agenda_model');
 		$this->load->model('Media_model');
+		$this->load->model('Article_model');
 		$this->load->model('Company_model');
 		$this->load->model('Documentation_model');
 		$this->load->model('Facility_model');
@@ -95,16 +96,31 @@ class About extends CI_Controller
 
 	public function programs()
 	{
-		
 		$data['programs'] = $this->Program_model->get_active_records();
 		$this->load->view('templates/header');
 		$this->load->view('pages/programs', $data);
 		$this->load->view('templates/footer');
 	}
 
+	public function articles()
+	{
+		$data['articles'] = $this->Article_model->get_active_records();
+		$this->load->view('templates/header');
+		$this->load->view('pages/articles', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function article($uuid)
+	{
+		$data['articles'] = $this->Article_model->get_active_records(20);
+		$data['article'] = $this->Article_model->get_record($uuid);
+		$this->load->view('templates/header');
+		$this->load->view('pages/articles_detail', $data);
+		$this->load->view('templates/footer');
+	}
+
 	public function facilities()
 	{
-		
 		$data['facilities'] = $this->Facility_model->get_active_records();
 		$this->load->view('templates/header');
 		$this->load->view('pages/facilities', $data);

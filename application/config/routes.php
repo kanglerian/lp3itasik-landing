@@ -58,6 +58,10 @@ $route['about/organization'] = 'about/organization';
 
 $route['programs'] = 'about/programs';
 $route['students'] = 'about/students';
+$route['articles'] = 'about/articles';
+
+$route['article'] = 'article';
+$route['article/new'] = 'article/article_add';
 
 $route['auth'] = 'auth';
 

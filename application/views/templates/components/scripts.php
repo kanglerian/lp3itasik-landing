@@ -5,7 +5,6 @@
 <script src="<?= base_url() ?>public/js/owl.carousel.min.js"></script>
 <script>
   $(document).ready(function() {
-
     $(".owl-carousel").owlCarousel({
       center: true,
       items: 3,
@@ -22,10 +21,8 @@
         }
       }
     });
-
   });
 </script>
-
 <script>
   $(document).ready(() => {
     $('#btnAside').click(() => {

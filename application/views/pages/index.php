@@ -162,7 +162,7 @@
 					<div class="bg-white shadow rounded-xl p-5 md:w-[400px] ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300">
 						<img src="<?= base_url() ?>uploads/<?= $media->image ?>" alt=<?= $media->title ?>" class="rounded-lg">
 						<h5 class="my-4 font-bold text-lg"><?= $media->title ?></h5>
-						<p class="text-sm text-gray-600"><?= $media->description ?></p>
+						<p class="text-sm text-gray-600"><?= $content = substr($media->description, 0, 200)  ?>...</p>
 						<div class="mt-4 text-sm flex align-center justify-between">
 							<a role="button" href="javascript:void(0)" onclick="alert('Maaf, fitur ini belum ada')" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">Selengkapnya</a>
 							<p class="text-gray-600 py-1"><?= date("d F Y", strtotime($media->date)); ?></p>

@@ -56,6 +56,9 @@
           <a href="<?= base_url() ?>students" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'students' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Organisasi Mahasiswa</a>
         </li>
         <li>
+          <a href="<?= base_url() ?>articles" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'articles' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Artikel</a>
+        </li>
+        <li>
           <button id="dropdownNavbarLink" data-dropdown-toggle="service" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-700 md:p-0 md:w-auto">Layanan <i class="ml-2 fa-solid fa-chevron-down"></i></button>
           <!-- Dropdown menu -->
           <div id="service" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
