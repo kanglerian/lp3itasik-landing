@@ -27,10 +27,10 @@
         <a href="#" class="hidden lg:inline">Career Center</a>
         <?php if ($this->session->userdata('language') == 'en') { ?>
           <a href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Digital Brochure</a>
-          <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Virtual Campus</a>
+          <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank" class="hidden md:inline">Virtual Campus</a>
         <?php } else { ?>
           <a href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Brosur Digital</a>
-          <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Virtual Kampus</a>
+          <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank" class="hidden md:inline">Virtual Kampus</a>
         <?php } ?>
         <?php if ($this->session->userdata('logged')) { ?>
           <a href="<?= base_url() ?>banner"><i class="fa-solid fa-user-circle"></i> <?= $this->session->userdata('username'); ?></a>
