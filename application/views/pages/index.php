@@ -202,7 +202,9 @@
 						<h5 class="my-4 font-bold text-lg"><?= $media->title ?></h5>
 						<p class="text-sm text-gray-600"><?= $content = substr($media->description, 0, 200)  ?>...</p>
 						<div class="mt-4 text-sm flex align-center justify-between">
-							<a role="button" href="javascript:void(0)" onclick="alert('Maaf, fitur ini belum ada')" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">Selengkapnya</a>
+							<a role="button" href="javascript:void(0)" onclick="alert('Maaf, fitur ini belum ada')" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">
+								<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+							</a>
 							<p class="text-gray-600 py-1"><?= date("d F Y", strtotime($media->date)); ?></p>
 						</div>
 					</div>
