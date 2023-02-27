@@ -9,7 +9,9 @@
 							<h5 class="font-bold text-sm mb-1 text-left text-gray-700"><?= $student->title ?></h5>
 							<p class="text-gray-600 text-xs"><?= $student->description ?></p>
 							<div class="flex justify-between items-center mt-4">
-								<a role="button" class="bg-cyan-600 text-white text-xs py-2 px-3 rounded-md">Selengkapnya</a>
+								<a role="button" class="bg-cyan-600 text-white text-xs py-2 px-3 rounded-md">
+									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+								</a>
 							</div>
 						</div>
 					</div>

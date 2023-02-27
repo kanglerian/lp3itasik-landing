@@ -10,7 +10,9 @@
 							<span class="inline-block bg-gray-200 text-gray-500 text-xs py-1 px-3 rounded-md mb-3"><?= $program->campus ?></span>
 							<p class="text-gray-600 text-xs"><?= $program->description ?></p>
 							<div class="flex justify-between items-center mt-4">
-								<a role="button" class="bg-cyan-600 text-white text-xs py-2 px-3 rounded-md">Selengkapnya</a>
+								<a role="button" class="bg-cyan-600 text-white text-xs py-2 px-3 rounded-md">
+									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+								</a>
 							</div>
 						</div>
 					</div>

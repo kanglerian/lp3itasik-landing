@@ -4,7 +4,7 @@
 			<div class="w-full flex-col justify-center items-center gap-5">
 				<?php foreach ($organizations as $organization) { ?>
 					<div class="text-center">
-						<span class="text-gray-700">Struktur Organisasi</span><br>
+						<span class="text-gray-700"><?= $this->session->userdata('language') == 'en' ? 'Organizational Structure' : 'Struktur Organisasi' ?></span><br>
 						<span class="font-bold"><?= $organization->title ?></span>
 					</div>
 					<div class="shadow rounded-lg mb-20 mt-10">

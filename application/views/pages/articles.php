@@ -8,7 +8,9 @@
 						<div class="p-4">
 							<h5 class="font-bold text-base mb-1 text-left text-gray-700"><?= $article->title ?></h5>
 							<div class="flex justify-between items-center mt-3">
-								<a href="<?= base_url() ?>about/article/<?= $article->uuid ?>" role="button" class="bg-cyan-600 text-white text-xs py-1 px-3 rounded-md">Selengkapnya</a>
+								<a href="<?= base_url() ?>about/article/<?= $article->uuid ?>" role="button" class="bg-cyan-600 text-white text-xs py-1 px-3 rounded-md">
+									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+								</a>
 								<span class="block bg-gray-200 text-gray-500 text-xs py-1 px-3 rounded-md"><?= date("d F Y", strtotime($article->date)) ?></span>
 							</div>
 						</div>
