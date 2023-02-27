@@ -26,7 +26,7 @@
 <script>
   $(document).ready(() => {
     $('#btnAside').click(() => {
-      
+
       $('#aside').animate({
         width: 'toggle',
         opacity: 'toggle'

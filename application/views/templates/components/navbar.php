@@ -1,15 +1,33 @@
 <nav class="bg-cyan-700 text-white text-xs py-3">
   <div class="container mx-auto px-4">
-    <div class="flex justify-between">
-      <div>
-        <span class="mr-2 hidden md:inline"><i class="fa-solid fa-phone"></i> (0265)311766</span>
+    <div class="flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <button id="dropdownNavbarLink" data-dropdown-toggle="language" class="flex items-center justify-start w-auto py-2 text-white rounded">
+          <img src="<?= base_url() ?>public/flag/<?= $this->session->userdata('language') ?>.gif" class="inline-block w-6 rounded mr-2"><?= $this->session->userdata('language') == 'en' ? 'English' : 'Indonesia' ?>
+          <i class="ml-2 fa-solid fa-chevron-down"></i></button>
+        <div id="language" class="z-10 hidden font-normal bg-white rounded-lg shadow w-44">
+          <ul class="py-3 text-xs text-gray-700 px-4 space-y-2">
+            <li>
+              <a href="<?= base_url() ?>Language/change/en"><img src="<?= base_url() ?>public/flag/en.gif" class="inline-block w-10 rounded mr-2 shadow">English</a>
+            </li>
+            <li>
+              <a href="<?= base_url() ?>Language/change/id"><img src="<?= base_url() ?>public/flag/id.gif" class="inline-block w-10 rounded mr-2 shadow">Indonesia</a>
+            </li>
+          </ul>
+        </div>
+        |
+        <span class="hidden md:inline"><i class="fa-solid fa-phone"></i> (0265)311766</span>
         <a href="https://bit.ly/InfoPMBLP3ITasik" target="_blank"><i class="fa-brands fa-whatsapp"></i> 0813-1360-8558</a>
       </div>
       <div class="flex gap-3">
         <a href="#" class="hidden lg:inline">Career Center</a>
-        <a href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Brosur Digital</a>
-        <a href="#" class="hidden lg:inline">Alumni</a>
-        <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Virtual Kampus</a>
+        <?php if ($this->session->userdata('language') == 'en') { ?>
+          <a href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Digital Brochure</a>
+          <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Virtual Campus</a>
+        <?php } else { ?>
+          <a href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Brosur Digital</a>
+          <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank">Virtual Kampus</a>
+        <?php } ?>
         <?php if ($this->session->userdata('logged')) { ?>
           <a href="<?= base_url() ?>banner"><i class="fa-solid fa-user-circle"></i> <?= $this->session->userdata('username'); ?></a>
         <?php } else { ?>
@@ -35,38 +53,82 @@
     <div class="hidden w-full md:w-auto md:block transition duration-200 ease-in-out" data-attribute="0" id="navbar-dropdown">
       <ul class="flex flex-col mt-4 p-3 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
         <li>
-          <a href="<?= base_url() ?>" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == '' ? 'font-bold text-cyan-700 md:hover:text-cyan-800' : 'font-medium text-gray-700 md:hover:text-cyan-700' ?> md:p-0">Home</a>
+          <a href="<?= base_url() ?>" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == '' ? 'font-bold text-cyan-700 md:hover:text-cyan-800' : 'font-medium text-gray-700 md:hover:text-cyan-700' ?> md:p-0">
+            <?= $this->session->userdata('language') == 'en' ? 'Home' : 'Beranda' ?>
+          </a>
         </li>
         <li>
-          <button id="dropdownNavbarLink" data-dropdown-toggle="about" class="flex items-center justify-between w-full py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'about' ? 'font-bold text-cyan-700' : 'text-gray-700' ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-800 md:p-0 md:w-auto">Tentang Kampus <i class="ml-2 fa-solid fa-chevron-down"></i></button>
+          <button id="dropdownNavbarLink" data-dropdown-toggle="about" class="flex items-center justify-between w-full py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'about' ? 'font-bold text-cyan-700' : 'text-gray-700' ?> rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-800 md:p-0 md:w-auto">
+            <?= $this->session->userdata('language') == 'en' ? 'About Campus' : 'Tentang Kampus' ?>
+            <i class="ml-2 fa-solid fa-chevron-down"></i></button>
           <!-- Dropdown menu -->
           <div id="about" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
             <ul class="py-2 text-sm text-gray-700">
-              <li><a href="<?= base_url() ?>about/lp3i" class="block px-4 py-2 hover:bg-gray-100">Apa itu LP3I?</a></li>
-              <li><a href="<?= base_url() ?>about/branding" class="block px-4 py-2 hover:bg-gray-100">Logo & Warna</a></li>
-              <li><a href="<?= base_url() ?>about/organization" class="block px-4 py-2 hover:bg-gray-100">Struktur Organisasi</a></li>
-              <li><a href="<?= base_url() ?>about/facilities" class="block px-4 py-2 hover:bg-gray-100">Fasilitas Kampus</a></li>
+              <li>
+                <a href="<?= base_url() ?>about/lp3i" class="block px-4 py-2 hover:bg-gray-100">
+                  <?= $this->session->userdata('language') == 'en' ? 'What is LP3I?' : 'Apa itu LP3I?' ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?= base_url() ?>about/branding" class="block px-4 py-2 hover:bg-gray-100">
+                  <?= $this->session->userdata('language') == 'en' ? 'Logos and Colors' : 'Logo & Warna' ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?= base_url() ?>about/organization" class="block px-4 py-2 hover:bg-gray-100">
+                  <?= $this->session->userdata('language') == 'en' ? 'Organizational Structure' : 'Struktur Organisasi' ?>
+                </a>
+              </li>
+              <li>
+                <a href="<?= base_url() ?>about/facilities" class="block px-4 py-2 hover:bg-gray-100">
+                  <?= $this->session->userdata('language') == 'en' ? 'Campus Facilities' : 'Fasilitas Kampus' ?>
+                </a>
+              </li>
             </ul>
           </div>
         </li>
         <li>
-          <a href="<?= base_url() ?>programs" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'programs' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Program Studi</a>
+          <a href="<?= base_url() ?>programs" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'programs' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">
+            <?= $this->session->userdata('language') == 'en' ? 'Study Programs' : 'Program Studi' ?>
+          </a>
         </li>
         <li>
-          <a href="<?= base_url() ?>students" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'students' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Organisasi Mahasiswa</a>
+          <a href="<?= base_url() ?>students" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'students' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">
+            <?= $this->session->userdata('language') == 'en' ? 'Student Organizations' : 'Organisasi Mahasiswa' ?>
+          </a>
         </li>
         <li>
-          <a href="<?= base_url() ?>articles" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'articles' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">Artikel</a>
+          <a href="<?= base_url() ?>articles" class="block md:inline py-2 pl-3 pr-4 <?= $this->uri->segment(1) == 'articles' ? 'font-bold text-cyan-700' : 'text-gray-700' ?>  md:hover:text-cyan-800 md:p-0">
+            <?= $this->session->userdata('language') == 'en' ? 'Article' : 'Artikel' ?>
+          </a>
         </li>
         <li>
-          <button id="dropdownNavbarLink" data-dropdown-toggle="service" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-700 md:p-0 md:w-auto">Layanan <i class="ml-2 fa-solid fa-chevron-down"></i></button>
+          <button id="dropdownNavbarLink" data-dropdown-toggle="service" class="flex items-center justify-between w-full py-2 pl-3 pr-4 font-medium text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-cyan-700 md:p-0 md:w-auto">
+            <?= $this->session->userdata('language') == 'en' ? 'Service' : 'Layanan' ?>
+            <i class="ml-2 fa-solid fa-chevron-down"></i></button>
           <!-- Dropdown menu -->
           <div id="service" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
             <ul class="py-2 text-sm text-gray-700">
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Akademik</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">SIAKAD</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">LMS</a></li>
-              <li><a href="#" class="block px-4 py-2 hover:bg-gray-100">Career Center</a></li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                  <?= $this->session->userdata('language') == 'en' ? 'Academic' : 'Akademik' ?>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                  SIAKAD
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                  LMS
+                </a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">
+                  Career Center
+                </a>
+              </li>
             </ul>
           </div>
         </li>

@@ -45,10 +45,18 @@
 <section class="mt-3 md:mt-5">
 	<div class="container mx-auto text-sm md:text-base px-4">
 		<div class="flex flex-col md:flex-row gap-2	md:gap-4 justify-center">
-			<a role="button" href="https://api.whatsapp.com/send?phone=6281313608558&text=Hallo%20Kak,%20Boleh%20minta%20informasi%20Pendaftaran%20Mahasiswa%20Politeknik%20LP3I%20Kampus%20Tasikmalaya%3F" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-center text-white bg-cyan-700 hover:bg-cyan-800 rounded"><i class="fa-solid fa-circle-info mr-1"></i> Informasi Pendaftaran</a>
-			<a role="button" href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank" class="transition text-center ease-in-out duration-300 inline py-2 px-8 text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-book-open mr-1"></i> Brosur Digital</a>
-			<a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 text-center hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-map-location-dot mr-1"></i> Virtual Kampus</a>
-			<button onclick="alert('Maaf, belum ada fitur ini')" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-qrcode mr-1"></i> Cek Beasiswa</button>
+			<a role="button" href="https://api.whatsapp.com/send?phone=6281313608558&text=Hallo%20Kak,%20Boleh%20minta%20informasi%20Pendaftaran%20Mahasiswa%20Politeknik%20LP3I%20Kampus%20Tasikmalaya%3F" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-center text-white bg-cyan-700 hover:bg-cyan-800 rounded"><i class="fa-solid fa-circle-info mr-1"></i>
+				<?= $this->session->userdata('language') == 'en' ? 'Registration Information' : 'Informasi Pendaftaran' ?>
+			</a>
+			<a role="button" href="http://brosur.politekniklp3i-tasikmalaya.ac.id/" target="_blank" class="transition text-center ease-in-out duration-300 inline py-2 px-8 text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-book-open mr-1"></i>
+				<?= $this->session->userdata('language') == 'en' ? 'Digital Brochure' : 'Brosur Digital' ?>
+			</a>
+			<a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 text-center hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-map-location-dot mr-1"></i>
+				<?= $this->session->userdata('language') == 'en' ? 'Virtual Campus' : 'Virtual Kampus' ?>
+			</a>
+			<button onclick="alert('Maaf, belum ada fitur ini')" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-qrcode mr-1"></i>
+				<?= $this->session->userdata('language') == 'en' ? 'Scholarship Check' : 'Cek Beasiswa' ?>
+			</button>
 		</div>
 	</div>
 </section>
@@ -78,14 +86,18 @@
 		<div class="container mx-auto text-center text-white px-4">
 			<?php if (!empty($politechnics) || !empty($colleges)) { ?>
 				<div class="bg-lp3i-100 py-3 mb-8 rounded-lg">
-					<h5 class="font-bold text-xl">Kampus Tasikmalaya</h5>
+					<h5 class="font-bold text-xl"><?= $this->session->userdata('language') == 'en' ? 'Tasikmalaya Campus' : 'Kampus Tasikmalaya' ?></h5>
 				</div>
 			<?php } ?>
 
 			<?php if (!empty($politechnics)) { ?>
-				<h5 class="font-bold text-2xl my-3">Program <span class="text-merah-100">Pendidikan Diploma 3</span></h5>
-				<p>Berikut adalah daftar program studi jenjang D3 di Politeknik LP3I Kampus Tasikmalaya</p>
-
+				<?php if ($this->session->userdata('language') == 'en') { ?>
+					<h5 class="font-bold text-2xl my-3">Academic Program <span class="text-merah-100">Diploma 3</span></h5>
+					<p>The following is a list of D3 level study programs at the LP3I Polytechnic, Tasikmalaya Campus</p>
+				<?php } else { ?>
+					<h5 class="font-bold text-2xl my-3">Program <span class="text-merah-100">Pendidikan Diploma 3</span></h5>
+					<p>Berikut adalah daftar program studi jenjang D3 di Politeknik LP3I Kampus Tasikmalaya</p>
+				<?php } ?>
 				<div class="flex flex-wrap flex-col md:flex-row justify-center gap-5 my-8">
 
 					<?php foreach ($politechnics as $politechnic) { ?>
@@ -93,7 +105,9 @@
 							<img class="w-full object-cover rounded-lg" alt="<?= $politechnic->title ?>" src="<?= base_url() ?>uploads/<?= $politechnic->image ?>" />
 							<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-lp3i-200 rounded-lg opacity-0 group-hover:h-full group-hover:opacity-95 duration-500">
 								<h1 class="text-lg text-white"><?= $politechnic->level ?> <?= $politechnic->title ?></h1>
-								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">Selengkapnya</a>
+								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
+									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+								</a>
 							</div>
 						</div>
 					<?php } ?>
@@ -102,8 +116,14 @@
 			<?php } ?>
 
 			<?php if (!empty($colleges)) { ?>
-				<h5 class="font-bold text-2xl my-3">Program Pendidikan <span class="text-merah-100">Vokasi 2 Tahun</span></h5>
-				<p>Berikut adalah daftar program studi jenjang Vokasi 2 Tahun di LP3I Tasikmalaya</p>
+
+				<?php if ($this->session->userdata('language') == 'en') { ?>
+					<h5 class="font-bold text-2xl my-3">Academic Program <span class="text-merah-100">2 Year Vocation</span></h5>
+					<p>The following is a list of 2-year Vocational level study programs at LP3I Tasikmalaya</p>
+				<?php } else { ?>
+					<h5 class="font-bold text-2xl my-3">Program Pendidikan <span class="text-merah-100">Vokasi 2 Tahun</span></h5>
+					<p>Berikut adalah daftar program studi jenjang Vokasi 2 Tahun di LP3I Tasikmalaya</p>
+				<?php } ?>
 
 				<div class="flex flex-col md:flex-row justify-center gap-5 my-8">
 
@@ -112,7 +132,9 @@
 							<img class="w-full object-cover rounded-lg" alt="<?= $college->title ?>" src="<?= base_url() ?>uploads/<?= $college->image ?>" />
 							<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-lp3i-200 rounded-lg opacity-0 group-hover:h-full group-hover:opacity-95 duration-500">
 								<h1 class="text-lg text-white"><?= $college->title ?> <?= $college->level ?></h1>
-								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">Selengkapnya</a>
+								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
+									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+								</a>
 							</div>
 						</div>
 					<?php } ?>
@@ -123,11 +145,18 @@
 
 			<?php if (!empty($mains)) { ?>
 				<div class="bg-lp3i-200 py-3 mb-8 rounded-lg">
-					<h5 class="font-bold text-xl">Kampus Utama</h5>
+					<h5 class="font-bold text-xl">
+						<?= $this->session->userdata('language') == 'en' ? 'Main Campus' : 'Kampus Utama' ?>
+					</h5>
 				</div>
 
-				<h5 class="font-bold text-2xl my-3">Program Pendidikan <span class="text-merah-100">Diploma 3</span></h5>
-				<p>Berikut adalah daftar program studi jenjang D3 di Politeknik LP3I</p>
+				<?php if ($this->session->userdata('language') == 'en') { ?>
+					<h5 class="font-bold text-2xl my-3">Academic Program <span class="text-merah-100">Diploma 3</span></h5>
+					<p>The following is a list of D3 level study programs at the LP3I Polytechnic</p>
+				<?php } else { ?>
+					<h5 class="font-bold text-2xl my-3">Program Pendidikan <span class="text-merah-100">Diploma 3</span></h5>
+					<p>Berikut adalah daftar program studi jenjang D3 di Politeknik LP3I</p>
+				<?php } ?>
 
 				<div class="flex flex-wrap flex-col md:flex-row justify-center gap-5 my-8">
 
@@ -136,7 +165,9 @@
 							<img class="w-full object-cover rounded-lg" alt="<?= $main->title ?>" src="<?= base_url() ?>uploads/<?= $main->image ?>" />
 							<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-lp3i-200 rounded-lg opacity-0 group-hover:h-full group-hover:opacity-95 duration-500">
 								<h1 class="text-lg text-white"><?= $main->level ?> <?= $main->title ?></h1>
-								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">Selengkapnya</a>
+								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
+									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+								</a>
 							</div>
 						</div>
 					<?php } ?>
@@ -152,8 +183,15 @@
 	<div class="container mx-auto px-4">
 
 		<div class="py-3 mb-8 text-center rounded-lg">
-			<h5 class="font-bold text-3xl"><span class="text-merah-300">Media</span> Kampus</h5>
-			<p class="text-gray-600 text-sm mt-2">Berikut adalah berita terbaru dari Politeknik LP3I Kampus Tasikmalaya</p>
+
+			<?php if ($this->session->userdata('language') == 'en') { ?>
+				<h5 class="font-bold text-3xl"><span class="text-merah-300">Campus</span> Media</h5>
+				<p class="text-gray-600 text-sm mt-2">The following is the latest news from the LP3I Polytechnic, Tasikmalaya Campus</p>
+			<?php } else { ?>
+				<h5 class="font-bold text-3xl"><span class="text-merah-300">Media</span> Kampus</h5>
+				<p class="text-gray-600 text-sm mt-2">Berikut adalah berita terbaru dari Politeknik LP3I Kampus Tasikmalaya</p>
+			<?php } ?>
+
 		</div>
 
 		<?php if (!empty($medias)) { ?>
@@ -171,7 +209,9 @@
 				<?php } ?>
 			</div>
 		<?php } else { ?>
-			<p class="bg-red-500 text-white text-center text-sm py-2 rounded-lg">Belum ada media.</p>
+			<p class="bg-red-500 text-white text-center text-sm py-2 rounded-lg">
+				<?= $this->session->userdata('language') == 'en' ? 'No news yet' : 'Belum ada berita' ?>
+			</p>
 		<?php } ?>
 	</div>
 </section>
@@ -180,8 +220,13 @@
 	<div class="container mx-auto px-4">
 
 		<div class="py-3 mb-8 text-center rounded-lg">
-			<h5 class="font-bold text-3xl"><span class="text-merah-300">Agenda</span> Kampus</h5>
-			<p class="text-gray-600 text-sm mt-2">Berikut ini adalah daftar kegiatan yang dilakukan di Politeknik LP3I Kampus Tasikmalaya</p>
+			<?php if ($this->session->userdata('language') == 'en') { ?>
+				<h5 class="font-bold text-3xl"><span class="text-merah-300">Campus</span> Agenda</h5>
+				<p class="text-gray-600 text-sm mt-2">The following is a list of activities carried out at the LP3I Polytechnic, Tasikmalaya Campus</p>
+			<?php } else { ?>
+				<h5 class="font-bold text-3xl"><span class="text-merah-300">Agenda</span> Kampus</h5>
+				<p class="text-gray-600 text-sm mt-2">Berikut ini adalah daftar kegiatan yang dilakukan di Politeknik LP3I Kampus Tasikmalaya</p>
+			<?php } ?>
 		</div>
 		<?php if (!empty($agendas)) { ?>
 			<div class="flex justify-center">
@@ -198,7 +243,9 @@
 				</div>
 			</div>
 		<?php } else { ?>
-			<p class="bg-red-500 text-white text-center text-sm py-2 rounded-lg">Belum ada agenda.</p>
+			<p class="bg-red-500 text-white text-center text-sm py-2 rounded-lg">
+				<?= $this->session->userdata('language') == 'en' ? 'No agendas yet' : 'Belum ada agenda' ?>
+			</p>
 		<?php } ?>
 	</div>
 
@@ -218,7 +265,9 @@
 						<h5 class="font-bold text-2xl md:text-3xl"><?= $information->title ?></h5>
 						<p class="text-sm text-gray-600 mt-3"><?= $information->description ?></p>
 
-						<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">Lihat selengkapnya</a>
+						<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">
+							<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+						</a>
 
 						<?php if (!empty($documentations)) { ?>
 							<div class="mt-5 flex justify-center">
@@ -245,10 +294,17 @@
 					<iframe width="100%" height="350px" class="rounded-2xl border-4 border-gray-200" src="https://www.youtube.com/embed/Vo1R5cElVqQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 				</div>
 				<div class="w-full md:w-1/2">
-					<h5 class="font-bold text-2xl md:text-3xl">LP3I Tasikmalaya – Cover Condong Pada Mimpi</h5>
-					<p class="text-sm text-gray-600 mt-3">Video ini berisi tentang pendidikan vokasi di LP3I Tasikmalaya mulai dari kegiatan Pengenalan Lingkungan Kampus, kegiatan praktek akuntansi, praktek otomotif, praktek informatika, praktek manajemen perkantoran, dan proses penempatan kerja yang menjadi salah satu program unggulan di LP3I.</p>
 
-					<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">Lihat selengkapnya</a>
+					<?php if ($this->session->userdata('language') == 'en') { ?>
+						<h5 class="font-bold text-2xl md:text-3xl">LP3I Tasikmalaya – Condong Pada Mimpi Cover</h5>
+						<p class="text-sm text-gray-600 mt-3">This video contains about vocational education at LP3I Tasikmalaya starting from Campus Environment Introduction activities, accounting practice activities, automotive practice, informatics practice, office management practice, and the work placement process which is one of the leading programs at LP3I.</p>
+						<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">More information</a>
+					<?php } else { ?>
+						<h5 class="font-bold text-2xl md:text-3xl">LP3I Tasikmalaya – Cover Condong Pada Mimpi</h5>
+						<p class="text-sm text-gray-600 mt-3">Video ini berisi tentang pendidikan vokasi di LP3I Tasikmalaya mulai dari kegiatan Pengenalan Lingkungan Kampus, kegiatan praktek akuntansi, praktek otomotif, praktek informatika, praktek manajemen perkantoran, dan proses penempatan kerja yang menjadi salah satu program unggulan di LP3I.</p>
+						<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">Lihat selengkapnya</a>
+					<?php } ?>
+
 					<?php if (!empty($documentations)) { ?>
 						<div class="mt-5 flex justify-center">
 							<div class="owl-carousel owl-theme owl-loaded">
@@ -277,8 +333,13 @@
 <section class="my-10">
 	<div class="container mx-auto px-4">
 		<div class="py-3 mb-8 md:px-20 text-center rounded-lg">
-			<h5 class="font-bold text-3xl">Kerjasama</h5>
-			<p class="text-gray-600 text-sm mt-2">LP3I berkolaborasi dengan ratusan perusahaan di Indonesia untuk penempatan kerja mahasiswa bahkan sebelum lulus untuk memastikan bahwa kami memberikan mereka kesempatan untuk masa depan yang lebih baik.</p>
+			<?php if ($this->session->userdata('language') == 'en') { ?>
+				<h5 class="font-bold text-3xl">Partnertship</h5>
+				<p class="text-gray-600 text-sm mt-2">LP3I collaborates with hundreds of companies in Indonesia for student work placements even before graduation to ensure that we give them the opportunity for a better future.</p>
+			<?php } else { ?>
+				<h5 class="font-bold text-3xl">Kerjasama</h5>
+				<p class="text-gray-600 text-sm mt-2">LP3I berkolaborasi dengan ratusan perusahaan di Indonesia untuk penempatan kerja mahasiswa bahkan sebelum lulus untuk memastikan bahwa kami memberikan mereka kesempatan untuk masa depan yang lebih baik.</p>
+			<?php } ?>
 		</div>
 
 		<div class="text-center space-x-10">
