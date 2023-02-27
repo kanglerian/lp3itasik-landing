@@ -34,7 +34,8 @@
 	<div class="container mx-auto px-4">
 		<div class="flex flex-col justify-end md:flex-row gap-5">
 			<div class="w-full md:w-1/3">
-				<h1 class="text-xl font-bold text-gray-800">Berita Lainnya</h1>
+				<h1 class="text-xl font-bold text-gray-800">
+						<?= $this->session->userdata('language') == 'en' ? 'More News' : 'Berita Lainnya' ?></h1>
 				<hr class="my-2">
 				<div>
 					<ul class="space-y-3">
