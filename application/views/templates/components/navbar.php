@@ -3,7 +3,11 @@
     <div class="flex justify-between items-center">
       <div class="flex items-center gap-2">
         <button id="dropdownNavbarLink" data-dropdown-toggle="language" class="flex items-center justify-start w-auto py-2 text-white rounded">
-          <img src="<?= base_url() ?>public/flag/<?= $this->session->userdata('language') ?>.gif" class="inline-block w-6 rounded mr-2"><?= $this->session->userdata('language') == 'en' ? 'English' : 'Indonesia' ?>
+          <?php if ($this->session->userdata('language') == 'en') { ?>
+            <img src="<?= base_url() ?>public/flag/en.gif" class="inline-block w-6 rounded mr-2">English
+          <?php } else { ?>
+            <img src="<?= base_url() ?>public/flag/id.gif" class="inline-block w-6 rounded mr-2">Indonesia
+          <?php } ?>
           <i class="ml-2 fa-solid fa-chevron-down"></i></button>
         <div id="language" class="z-10 hidden font-normal bg-white rounded-lg shadow w-44">
           <ul class="py-3 text-xs text-gray-700 px-4 space-y-2">
@@ -112,6 +116,7 @@
               <li>
                 <a href="#" class="block px-4 py-2 hover:bg-gray-100">
                   <?= $this->session->userdata('language') == 'en' ? 'Academic' : 'Akademik' ?>
+
                 </a>
               </li>
               <li>
