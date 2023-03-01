@@ -25,7 +25,7 @@ class About extends CI_Controller
 	{
 
 		$data['banners'] = $this->Banner_model->get_active_records();
-		$data['medias'] = $this->Media_model->get_active_records();
+		$data['medias'] = $this->Media_model->get_active_records(3);
 		$data['agendas'] = $this->Agenda_model->get_active_records();
 		$data['informations'] = $this->Information_model->get_one_record();
 		$data['companies'] = $this->Company_model->get_active_records();
@@ -102,11 +102,28 @@ class About extends CI_Controller
 		$this->load->view('templates/footer');
 	}
 
+	public function blogs()
+	{
+		$data['articles'] = $this->Article_model->get_active_records(6);
+		$data['medias'] = $this->Media_model->get_active_records(6);
+		$this->load->view('templates/header');
+		$this->load->view('pages/blogs', $data);
+		$this->load->view('templates/footer');
+	}
+
 	public function articles()
 	{
 		$data['articles'] = $this->Article_model->get_active_records();
 		$this->load->view('templates/header');
 		$this->load->view('pages/articles', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function medias()
+	{
+		$data['medias'] = $this->Media_model->get_active_records();
+		$this->load->view('templates/header');
+		$this->load->view('pages/medias', $data);
 		$this->load->view('templates/footer');
 	}
 
@@ -116,6 +133,15 @@ class About extends CI_Controller
 		$data['article'] = $this->Article_model->get_record($uuid);
 		$this->load->view('templates/header');
 		$this->load->view('pages/articles_detail', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function media($uuid)
+	{
+		$data['medias'] = $this->Media_model->get_active_records(20);
+		$data['media'] = $this->Media_model->get_record($uuid);
+		$this->load->view('templates/header');
+		$this->load->view('pages/medias_detail', $data);
 		$this->load->view('templates/footer');
 	}
 

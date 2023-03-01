@@ -58,7 +58,11 @@ $route['about/organization'] = 'about/organization';
 
 $route['programs'] = 'about/programs';
 $route['students'] = 'about/students';
-$route['articles'] = 'about/articles';
+$route['blogs'] = 'about/blogs';
+$route['blogs/articles'] = 'about/articles';
+$route['blogs/medias'] = 'about/medias';
+$route['blogs/article/(:any)'] = 'about/article/$1';
+$route['blogs/media/(:any)'] = 'about/media/$1';
 
 $route['article'] = 'article';
 $route['article/new'] = 'article/article_add';

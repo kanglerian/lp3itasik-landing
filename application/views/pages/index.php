@@ -106,7 +106,7 @@
 							<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-lp3i-200 rounded-lg opacity-0 group-hover:h-full group-hover:opacity-95 duration-500">
 								<h1 class="text-lg text-white"><?= $politechnic->level ?> <?= $politechnic->title ?></h1>
 								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
-									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+									<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 								</a>
 							</div>
 						</div>
@@ -166,7 +166,7 @@
 							<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-lp3i-200 rounded-lg opacity-0 group-hover:h-full group-hover:opacity-95 duration-500">
 								<h1 class="text-lg text-white"><?= $main->level ?> <?= $main->title ?></h1>
 								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
-									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+									<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 								</a>
 							</div>
 						</div>
@@ -202,13 +202,16 @@
 						<h5 class="my-4 font-bold text-lg"><?= $media->title ?></h5>
 						<p class="text-sm text-gray-600"><?= $content = substr($media->description, 0, 200)  ?>...</p>
 						<div class="mt-4 text-sm flex align-center justify-between">
-							<a role="button" href="javascript:void(0)" onclick="alert('Maaf, fitur ini belum ada')" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">
-								<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+							<a role="button"href="<?= base_url() ?>blogs/media/<?= $media->uuid ?>" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">
+								<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 							</a>
 							<p class="text-gray-600 py-1"><?= date("d F Y", strtotime($media->date)); ?></p>
 						</div>
 					</div>
 				<?php } ?>
+			</div>
+			<div class="text-center">
+				<a href="<?= base_url() ?>blogs/medias" class="text-sky-600 text-sm underline"><?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?></a>
 			</div>
 		<?php } else { ?>
 			<p class="bg-red-500 text-white text-center text-sm py-2 rounded-lg">
@@ -268,7 +271,7 @@
 						<p class="text-sm text-gray-600 mt-3"><?= $information->description ?></p>
 
 						<a href="#" class="transition ease-in-out duration-300 inline-block py-2 px-4 text-sm mt-5 text-white bg-lp3i-200 hover:bg-lp3i-600 rounded">
-							<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+							<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 						</a>
 
 						<?php if (!empty($documentations)) { ?>

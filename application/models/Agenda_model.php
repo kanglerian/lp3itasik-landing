@@ -16,10 +16,10 @@ class Agenda_model extends CI_Model
         return $query->result();
     }
 
-    public function get_active_records()
+    public function get_active_records($count = 0)
     {   
         $this->db->order_by('date','DESC');
-        $query = $this->db->get_where('agendas', ['status' => 1]);
+        $query = $this->db->get_where('agendas', ['status' => 1], $count);
         return $query->result();
     }
 

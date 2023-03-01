@@ -16,11 +16,17 @@ class Media_model extends CI_Model
         return $query->result();
     }
 
-    public function get_active_records()
+    public function get_active_records($count = 0)
     {   
         $this->db->order_by('date','DESC');
-        $query = $this->db->get_where('medias', ['status' => 1]);
+        $query = $this->db->get_where('medias', ['status' => 1], $count);
         return $query->result();
+    }
+
+    public function get_record($uuid)
+    {
+        $query = $this->db->get_where('medias', ['uuid' => $uuid]);
+        return $query->row();
     }
 
     public function insert_record()
@@ -46,7 +52,9 @@ class Media_model extends CI_Model
             $this->session->set_flashdata('message', $message);
         } else {
             $file = $this->upload->data();
+            $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
             $data = [
+                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'title' => $this->input->post('title'),
                 'description' => $this->input->post('description'),
                 'date' => $this->input->post('date'),

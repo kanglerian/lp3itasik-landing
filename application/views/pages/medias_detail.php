@@ -35,14 +35,14 @@
 		<div class="flex flex-col justify-end md:flex-row gap-5">
 			<div class="w-full md:w-1/3">
 				<h1 class="text-xl font-bold text-gray-800">
-						<?= $this->session->userdata('language') == 'en' ? 'More News' : 'Berita Lainnya' ?></h1>
+						<?= $this->session->userdata('language') == 'en' ? 'More Medias' : 'Media Lainnya' ?></h1>
 				<hr class="my-2">
 				<div>
 					<ul class="space-y-3">
-						<?php if (!empty($articles)) { ?>
-							<?php foreach ($articles as $news) { ?>
+						<?php if (!empty($medias)) { ?>
+							<?php foreach ($medias as $media) { ?>
 								<li>
-									<a href="<?= base_url() ?>about/article/<?= $news->uuid ?>" class="bg-gray-100 py-1 px-2 rounded text-base text-sky-600 underline md:hover:text-sky-700"><?= $news->title ?></a>
+									<a href="<?= base_url() ?>about/article/<?= $media->uuid ?>" class="bg-gray-100 py-1 px-2 rounded text-base text-sky-600 underline md:hover:text-sky-700"><?= $media->title ?></a>
 								</li>
 							<?php } ?>
 						<?php } else { ?>
@@ -52,11 +52,11 @@
 				</div>
 			</div>
 			<div class="w-full md:w-2/3">
-				<img src="<?= base_url() ?>uploads/<?= $article->image ?>" alt="<?= $article->title ?>" class="rounded-xl shadow border-8 border-white">
+				<img src="<?= base_url() ?>uploads/<?= $media->image ?>" alt="<?= $media->title ?>" class="rounded-xl shadow border-8 border-white">
 				<div class="space-y-5 mt-4 bg-gray-100 p-5 rounded-xl">
-					<h1 class="text-4xl font-bold text-gray-800"><?= $article->title ?></h1>
-					<span class="inline-block bg-sky-200 text-sky-700 text-sm py-1 px-5 rounded-md mb-3"><i class="fa-solid fa-calendar-days mr-2"></i> <?= date("d F Y", strtotime($article->date)) ?></span>
-					<div id="article" class="text-gray-700 leading-6 space-y-5"><?= $article->description ?></div>
+					<h1 class="text-4xl font-bold text-gray-800"><?= $media->title ?></h1>
+					<span class="inline-block bg-sky-200 text-sky-700 text-sm py-1 px-5 rounded-md mb-3"><i class="fa-solid fa-calendar-days mr-2"></i> <?= date("d F Y", strtotime($media->date)) ?></span>
+					<div id="media" class="text-gray-700 leading-6 space-y-5"><?= $media->description ?></div>
 				</div>
 			</div>
 		</div>

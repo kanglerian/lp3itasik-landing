@@ -11,7 +11,7 @@
 							<p class="text-gray-600 text-xs"><?= $program->description ?></p>
 							<div class="flex justify-between items-center mt-4">
 								<a role="button" class="bg-cyan-600 text-white text-xs py-2 px-3 rounded-md">
-									<?= $this->session->userdata('language') == 'en' ? 'More' : 'Selengkapnya' ?>
+									<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 								</a>
 							</div>
 						</div>
