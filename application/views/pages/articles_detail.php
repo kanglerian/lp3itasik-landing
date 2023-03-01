@@ -42,7 +42,7 @@
 						<?php if (!empty($articles)) { ?>
 							<?php foreach ($articles as $news) { ?>
 								<li>
-									<a href="<?= base_url() ?>about/article/<?= $news->uuid ?>" class="bg-gray-100 py-1 px-2 rounded text-base text-sky-600 underline md:hover:text-sky-700"><?= $news->title ?></a>
+									<a href="<?= base_url() ?>blogs/article/<?= $news->uuid ?>" class="bg-gray-100 py-1 px-2 rounded text-base text-sky-600 underline md:hover:text-sky-700"><?= $news->title ?></a>
 								</li>
 							<?php } ?>
 						<?php } else { ?>
