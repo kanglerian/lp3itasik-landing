@@ -57,6 +57,9 @@
 					<h1 class="text-4xl font-bold text-gray-800"><?= $article->title ?></h1>
 					<span class="inline-block bg-sky-200 text-sky-700 text-sm py-1 px-5 rounded-md mb-3"><i class="fa-solid fa-calendar-days mr-2"></i> <?= date("d F Y", strtotime($article->date)) ?></span>
 					<div id="article" class="text-gray-700 leading-6 space-y-5"><?= $article->description ?></div>
+					<a target="_blank" href="<?= $article->source ?>" class="inline-block text-sm bg-sky-100 text-sky-700 px-3 py-1 rounded-lg"><i class="fa-solid fa-link"></i>
+						<?= $this->session->userdata('language') == 'en' ? 'Source' : 'Sumber' ?>
+					</a>
 				</div>
 			</div>
 		</div>
