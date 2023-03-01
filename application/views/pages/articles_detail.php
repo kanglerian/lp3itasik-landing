@@ -32,11 +32,6 @@
 </style>
 <section class="my-14">
 	<div class="container mx-auto px-4">
-		<header class="mb-7 text-center">
-			<a href="<?= base_url() ?>blogs/articles">
-				<h1 class="text-3xl font-bold text-gray-700 hover:text-gray-800 underline underline-offset-8">Artikel</h1>
-			</a>
-		</header>
 		<div class="flex flex-col justify-end md:flex-row gap-5">
 			<div class="w-full md:w-1/3">
 				<h1 class="text-xl font-bold text-gray-800">

@@ -1,5 +1,10 @@
 <section class="my-14">
 	<div class="container mx-auto px-4">
+		<header class="mb-7 text-center">
+			<a href="<?= base_url() ?>blogs/medias">
+				<h1 class="text-3xl font-bold text-gray-700 hover:text-gray-800 underline underline-offset-8">Media</h1>
+			</a>
+		</header>
 		<?php if (!empty($medias)) { ?>
 			<div class="w-full flex justify-center flex-wrap gap-5">
 				<?php foreach ($medias as $media) { ?>
