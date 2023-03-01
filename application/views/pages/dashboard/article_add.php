@@ -1,6 +1,8 @@
 <div class="container mx-auto overflow-x-auto px-2 mt-10">
   <div class="space-y-2 mb-2 pl-2">
     <form id="form" action="<?= base_url() ?>article/insert" class="flex flex-col md:items-start gap-4 py-3 px-2" method="post" enctype="multipart/form-data">
+
+    <input type="hidden" name="writter" value="<?= $this->session->userdata('fullname');?>">
       <div class="w-full flex flex-col md:flex-row gap-5">
         <div class="flex-1 flex flex-col gap-2">
           <div class="flex flex-col md:flex-row md:items-center gap-1">

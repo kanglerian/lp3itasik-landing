@@ -53,6 +53,7 @@ class Article_model extends CI_Model
                 'image' => date("Ymdhis") . $file["file_ext"],
                 'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'title' => $this->input->post('title'),
+                'writter' => $this->input->post('writter'),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
                 'source' => $this->input->post('source'),
@@ -104,8 +105,8 @@ class Article_model extends CI_Model
         } else {
             $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
             $data = [
-                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'title' => $this->input->post('title'),
+                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
                 'source' => $this->input->post('source'),

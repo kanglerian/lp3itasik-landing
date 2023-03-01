@@ -69,18 +69,10 @@ $route['article/new'] = 'article/article_add';
 
 $route['auth'] = 'auth';
 
+$route['profile'] = 'auth/profile';
+
 $route['banner'] = 'banner';
 $route['information'] = 'information';
-
-$route['dashboard/agenda'] = 'dashboard/agenda';
-$route['dashboard/media'] = 'dashboard/media';
-$route['dashboard/benefit'] = 'dashboard/benefit';
-
-$route['dashboard/program'] = 'dashboard/program';
-$route['dashboard/student'] = 'dashboard/student';
-$route['dashboard/about'] = 'dashboard/about';
-$route['dashboard/organization'] = 'dashboard/organization';
-$route['dashboard/facility'] = 'dashboard/facility';
 
 $route['404_override'] = 'unknown';
 $route['translate_uri_dashes'] = FALSE;

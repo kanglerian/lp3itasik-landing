@@ -17,6 +17,19 @@ class Auth extends CI_Controller
 		$this->load->view('templates/footer_auth');
 	}
 
+	public function profile()
+	{
+		$logged = $this->session->userdata('logged');
+		if ($logged == NULL) {
+			$this->session->set_flashdata('message', ['message' => 'Harap login terlebih dahulu!']);
+			redirect('auth');
+		} else {
+			$this->load->view('templates/header_dashboard');
+			$this->load->view('pages/auth/profile');
+			$this->load->view('templates/footer_dashboard');
+		}
+	}
+
 	public function login()
 	{
 		$username = $this->input->post('username');
@@ -28,9 +41,11 @@ class Auth extends CI_Controller
 			if ($password != $data[0]->password) {
 				$this->session->set_flashdata('message', ['message' => 'Password salah!']);
 			} else {
-				$this->session->set_userdata('username', $username);
+				$this->session->set_userdata('fullname', $data[0]->fullname);
+				$this->session->set_userdata('username', $data[0]->username);
+				$this->session->set_userdata('role', $data[0]->role);
 				$this->session->set_userdata('logged', TRUE);
-				return redirect('banner');
+				return redirect('auth/profile');
 			}
 		}
 		return redirect('auth');

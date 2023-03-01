@@ -33,12 +33,13 @@
                 <?= $number + 1 ?>
               </td>
               <th scope="row" class="px-6 py-3">
-                <a target="_blank" href="<?= base_url() ?>about/article/<?= $article->uuid ?>" role="button" class="font-bold text-blue-500"><?= $article->title ?></a>
+                <a target="_blank" href="<?= base_url() ?>blogs/article/<?= $article->uuid ?>" role="button" class="font-bold text-base text-blue-500"><?= $article->title ?></a>
+                <span class="font-medium text-xs block mt-2"><?= $article->writter ?></span>
               </th>
               </td>
-              <th scope="row" class="px-3 py-3">
+              <td scope="row" class="px-3 py-3">
                 <span class="font-medium"><?= date("d F Y", strtotime($article->date)) ?></span>
-              </th>
+              </td>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->
                 <a role="button" href="<?= base_url() ?>article/change/<?= $article->id ?>" class="block md:inline-block text-center text-white px-2 py-1 text-sm rounded <?= $article->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $article->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>

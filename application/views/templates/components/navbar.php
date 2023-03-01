@@ -33,7 +33,7 @@
           <a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" target="_blank" class="hidden md:inline">Virtual Kampus</a>
         <?php } ?>
         <?php if ($this->session->userdata('logged')) { ?>
-          <a href="<?= base_url() ?>banner"><i class="fa-solid fa-user-circle"></i> <?= $this->session->userdata('username'); ?></a>
+          <a href="<?= base_url() ?>profile"><i class="fa-solid fa-user-circle"></i> <?= $this->session->userdata('username'); ?></a>
         <?php } else { ?>
           <a href="<?= base_url() ?>auth"><i class="fa-solid fa-right-to-bracket"></i></a>
         <?php } ?>
