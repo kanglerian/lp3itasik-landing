@@ -80,8 +80,10 @@ class Article_model extends CI_Model
 
         if ($this->upload->do_upload('image')) {
             $file_data = $this->upload->data();
+            $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
             $data = [
                 'image' =>  date("Ymdhis") . $file_data["file_ext"],
+                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'title' => $this->input->post('title'),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
@@ -100,7 +102,9 @@ class Article_model extends CI_Model
             $this->session->set_flashdata('message', $message);
             return $this->db->update('articles', $data, ['id' =>  $id]);
         } else {
+            $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
             $data = [
+                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'title' => $this->input->post('title'),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
