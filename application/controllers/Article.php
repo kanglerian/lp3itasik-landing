@@ -13,11 +13,17 @@ class Article extends CI_Controller
 	public function index()
 	{
 		$logged = $this->session->userdata('logged');
+		$uuid = $this->session->userdata('uuid');
+		$role = $this->session->userdata('role');
 		if ($logged == NULL) {
 			$this->session->set_flashdata('message', ['message' => 'Harap login terlebih dahulu!']);
 			redirect('auth');
 		} else {
-			$data['articles'] = $this->Article_model->get_all_records();
+			if($role == 'admin'){
+				$data['articles'] = $this->Article_model->get_all_records();
+			}else{
+				$data['articles'] = $this->Article_model->get_all_records_user($uuid);
+			};
 			$this->load->view('templates/header_dashboard', $data);
 			$this->load->view('pages/dashboard/article', $data);
 			$this->load->view('templates/footer_dashboard');

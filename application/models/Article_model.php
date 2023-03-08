@@ -16,6 +16,13 @@ class Article_model extends CI_Model
         return $query->result();
     }
 
+    public function get_all_records_user($uuid)
+    {
+        $this->db->order_by('date','DESC');
+        $query = $this->db->get_where('articles', ['id_user' => $uuid]);
+        return $query->result();
+    }
+
     public function get_record($uuid)
     {
         $query = $this->db->get_where('articles', ['uuid' => $uuid]);
@@ -53,11 +60,11 @@ class Article_model extends CI_Model
                 'image' => date("Ymdhis") . $file["file_ext"],
                 'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
                 'title' => $this->input->post('title'),
-                'writter' => $this->input->post('writter'),
+                'id_user' => $this->input->post('id_user'),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
                 'source' => $this->input->post('source'),
-                'status' => '1',
+                'status' => '0',
             ];
             $message = [
                 'status' => 'success',

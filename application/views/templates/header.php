@@ -9,7 +9,7 @@
   <meta name="author" content="Politeknik LP3I Kampus Tasikmalaya">
 	<title>Politeknik LP3I Kampus Tasikmalaya</title>
 	<link rel="icon" type="image/x-icon" href="<?= base_url() ?>public/assets/favicon.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>public/css/all.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>public/css/owl.theme.default.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>public/css/owl.carousel.min.css">
 	<link href="<?= base_url() ?>public/css/flowbite.min.css" rel="stylesheet" />

@@ -1,6 +1,7 @@
-<script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
-<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-<script type="text/javascript" src="https://viewer.diagrams.net/js/viewer-static.min.js"></script>
+<script src="<?= base_url() ?>public/js/jquery-3.6.3.min.js"></script>
+<script src="<?= base_url() ?>public/js/all.min.js"></script>
+<script src="<?= base_url() ?>public/js/lottie-player.js"></script>
+<script type="text/javascript" src="<?= base_url() ?>public/js/viewer-static.min.js"></script>
 <script src="<?= base_url() ?>public/js/flowbite.min.js"></script>
 <script src="<?= base_url() ?>public/js/owl.carousel.min.js"></script>
 <script>

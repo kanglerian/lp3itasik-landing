@@ -1,8 +1,7 @@
 <div class="container mx-auto overflow-x-auto px-2 mt-10">
   <div class="space-y-2 mb-2 pl-2">
     <form id="form" action="<?= base_url() ?>article/insert" class="flex flex-col md:items-start gap-4 py-3 px-2" method="post" enctype="multipart/form-data">
-
-    <input type="hidden" name="writter" value="<?= $this->session->userdata('fullname');?>">
+    <input type="hidden" name="id_user" value="<?= $this->session->userdata('uuid');?>">
       <div class="w-full flex flex-col md:flex-row gap-5">
         <div class="flex-1 flex flex-col gap-2">
           <div class="flex flex-col md:flex-row md:items-center gap-1">
@@ -23,14 +22,6 @@
         </div>
         <hr>
         <div class="flex-1 flex flex-col gap-2">
-          
-          <div class="flex flex-col md:flex-row md:items-center gap-1">
-            <label class="w-full md:w-1/6 text-gray-800 font-bold text-sm">Status:</label>
-            <select name="status" id="status" class="w-full md:w-5/6 p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
-              <option value="1">Aktif</option>
-              <option value="0">Tidak aktif</option>
-            </select>
-          </div>
 
           <div>
             <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">

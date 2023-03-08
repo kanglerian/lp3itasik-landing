@@ -8,7 +8,7 @@
   </div>
   <div class="relative overflow-x-auto border border-gray-300 rounded-lg mt-5">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-      <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50 ">
         <tr>
           <th scope="col" class="md:w-1/12 px-6 py-3">
             No
@@ -34,7 +34,7 @@
               </td>
               <th scope="row" class="px-6 py-3">
                 <a target="_blank" href="<?= base_url() ?>blogs/article/<?= $article->uuid ?>" role="button" class="font-bold text-base text-blue-500"><?= $article->title ?></a>
-                <span class="font-medium text-xs block mt-2"><?= $article->writter ?></span>
+                <span class="font-medium text-xs block mt-2"><?= $article->id_user ?></span>
               </th>
               </td>
               <td scope="row" class="px-3 py-3">
@@ -42,7 +42,9 @@
               </td>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->
+                <?php if($this->session->userdata('role') == 'admin' || $this->session->userdata('role') == 'pendidikan'): ?>
                 <a role="button" href="<?= base_url() ?>article/change/<?= $article->id ?>" class="block md:inline-block text-center text-white px-2 py-1 text-sm rounded <?= $article->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $article->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>
+                <?php endif; ?>
                 <!-- Edit -->
                 <a href="<?= base_url() ?>article/detail/<?= $article->uuid ?>" role="button" class="block md:inline-block text-center text-white px-2 py-1 text-sm rounded bg-yellow-500"><i class="fa-solid fa-pen-to-square"></i>
                 </a>

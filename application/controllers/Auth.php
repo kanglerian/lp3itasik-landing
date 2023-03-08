@@ -41,6 +41,7 @@ class Auth extends CI_Controller
 			if ($password != $data[0]->password) {
 				$this->session->set_flashdata('message', ['message' => 'Password salah!']);
 			} else {
+				$this->session->set_userdata('uuid', $data[0]->uuid);
 				$this->session->set_userdata('fullname', $data[0]->fullname);
 				$this->session->set_userdata('username', $data[0]->username);
 				$this->session->set_userdata('role', $data[0]->role);
