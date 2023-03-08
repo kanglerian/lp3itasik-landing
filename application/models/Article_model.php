@@ -11,13 +11,13 @@ class Article_model extends CI_Model
 
     public function get_all_records()
     {
-        $query =  $this->db->query('SELECT articles.id, articles.uuid, articles.image, users.fullname, articles.title, articles.date, articles.description, articles.source, articles.status FROM articles INNER JOIN users ON articles.id_user = users.uuid COLLATE utf8_unicode_ci ORDER BY articles.date DESC');
+        $query =  $this->db->query('SELECT articles.id, articles.uuid, articles.image, users.fullname, articles.title, articles.date, articles.description, articles.source, articles.status FROM articles INNER JOIN users ON articles.id_user = users.uuid COLLATE latin1_general_ci ORDER BY articles.date DESC');
         return $query->result();
     }
 
     public function get_all_records_user($uuid)
     {
-        $query = $this->db->query('SELECT articles.id, articles.uuid, articles.image, users.fullname, articles.title, articles.date, articles.description, articles.source, articles.status FROM articles INNER JOIN users ON articles.id_user = users.uuid WHERE articles.id_user = ' . $uuid . ' COLLATE utf8_unicode_ci ORDER BY articles.date DESC');
+        $query = $this->db->query('SELECT articles.id, articles.uuid, articles.image, users.fullname, articles.title, articles.date, articles.description, articles.source, articles.status FROM articles INNER JOIN users ON articles.id_user = users.uuid WHERE articles.id_user = ' . $uuid . ' COLLATE latin1_general_ci ORDER BY articles.date DESC');
         return $query->result();
     }
 
