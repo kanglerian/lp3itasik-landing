@@ -11,15 +11,13 @@ class Article_model extends CI_Model
 
     public function get_all_records()
     {
-        $this->db->order_by('date','DESC');
-        $query = $this->db->get('articles');
+        $query =  $this->db->query('SELECT articles.id, articles.uuid, articles.image, users.fullname, articles.title, articles.date, articles.description, articles.source, articles.status FROM articles INNER JOIN users ON articles.id_user = users.uuid ORDER BY articles.date DESC');
         return $query->result();
     }
 
     public function get_all_records_user($uuid)
     {
-        $this->db->order_by('date','DESC');
-        $query = $this->db->get_where('articles', ['id_user' => $uuid]);
+        $query = $this->db->query('SELECT articles.id, articles.uuid, articles.image, users.fullname, articles.title, articles.date, articles.description, articles.source, articles.status FROM articles INNER JOIN users ON articles.id_user = users.uuid WHERE articles.id_user = ' . $uuid . ' ORDER BY articles.date DESC');
         return $query->result();
     }
 
@@ -30,8 +28,8 @@ class Article_model extends CI_Model
     }
 
     public function get_active_records($count = 0)
-    {   
-        $this->db->order_by('date','DESC');
+    {
+        $this->db->order_by('date', 'DESC');
         $query = $this->db->get_where('articles', ['status' => 1], $count);
         return $query->result();
     }
@@ -55,10 +53,10 @@ class Article_model extends CI_Model
             $this->session->set_flashdata('message', $message);
         } else {
             $file = $this->upload->data();
-            $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
+            $special_character = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '"', ':', ';', '?', '>', '.', '<', ',', "'", '{', '}', '[', ']', '/'];
             $data = [
                 'image' => date("Ymdhis") . $file["file_ext"],
-                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
+                'uuid' => strtolower(str_replace(" ", "-", str_replace($special_character, "", $this->input->post('title')))),
                 'title' => $this->input->post('title'),
                 'id_user' => $this->input->post('id_user'),
                 'date' => $this->input->post('date'),
@@ -88,10 +86,10 @@ class Article_model extends CI_Model
 
         if ($this->upload->do_upload('image')) {
             $file_data = $this->upload->data();
-            $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
+            $special_character = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '"', ':', ';', '?', '>', '.', '<', ',', "'", '{', '}', '[', ']', '/'];
             $data = [
                 'image' =>  date("Ymdhis") . $file_data["file_ext"],
-                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
+                'uuid' => strtolower(str_replace(" ", "-", str_replace($special_character, "", $this->input->post('title')))),
                 'title' => $this->input->post('title'),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
@@ -110,10 +108,10 @@ class Article_model extends CI_Model
             $this->session->set_flashdata('message', $message);
             return $this->db->update('articles', $data, ['id' =>  $id]);
         } else {
-            $special_character = ['~','`','!','@','#','$','%','^','&','*','(',')','_','-','+','=','"',':',';','?','>','.','<',',',"'",'{','}','[',']','/'];
+            $special_character = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '-', '+', '=', '"', ':', ';', '?', '>', '.', '<', ',', "'", '{', '}', '[', ']', '/'];
             $data = [
                 'title' => $this->input->post('title'),
-                'uuid' => strtolower(str_replace(" ","-",str_replace($special_character,"",$this->input->post('title')))),
+                'uuid' => strtolower(str_replace(" ", "-", str_replace($special_character, "", $this->input->post('title')))),
                 'date' => $this->input->post('date'),
                 'description' => $this->input->post('description'),
                 'source' => $this->input->post('source'),

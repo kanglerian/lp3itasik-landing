@@ -34,7 +34,7 @@
               </td>
               <th scope="row" class="px-6 py-3">
                 <a target="_blank" href="<?= base_url() ?>blogs/article/<?= $article->uuid ?>" role="button" class="font-bold text-base text-blue-500"><?= $article->title ?></a>
-                <span class="font-medium text-xs block mt-2"><?= $article->id_user ?></span>
+                <span class="font-medium text-xs block mt-2"><?= $article->fullname ?></span>
               </th>
               </td>
               <td scope="row" class="px-3 py-3">

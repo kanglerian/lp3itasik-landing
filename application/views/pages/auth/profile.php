@@ -3,6 +3,6 @@
     <a href="<?= base_url() ?>banner">
       <h1 class="font-bold text-2xl">Selamat Datang 👋<br><?= $this->session->userdata('fullname'); ?></h1>
     </a>
-    <p class="text-gray-500 text-sm">Ini adalah fitur Admin Dashboard dimana bapak <?= $this->session->userdata('fullname'); ?> bisa mengedit beberapa informasi yang tersedia di menu sebelah kiri. Silahkan diakses! 😊</p>
+    <p class="text-gray-500 text-sm">Ini adalah fitur Admin Dashboard dimana <?= $this->session->userdata('fullname'); ?> bisa mengedit beberapa informasi yang tersedia di menu sebelah kiri. Silahkan diakses! 😊</p>
   </div>
 </div>
