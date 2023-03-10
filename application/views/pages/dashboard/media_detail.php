@@ -42,3 +42,4 @@
     }
     editInformation();
   </script>
+</div>
