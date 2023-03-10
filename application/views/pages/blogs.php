@@ -9,7 +9,7 @@
 					<div class="item w-96 h-auto border-8 border-white shadow rounded-lg ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300">
 						<img src="<?= base_url() ?>uploads/<?= $article->image ?>" alt="<?= $article->title ?>" class="rounded-lg">
 						<div class="p-4 space-y-4">
-							<h5 class="font-bold text-base text-left text-gray-700"><?= substr($article->title, 0, 70) ?>...</h5>
+							<h5 class="font-bold text-base text-left text-gray-700"><?= substr($article->title, 0, 70) ?><?= strlen($article->title) >=70 ? '...' : '' ?></h5>
 							<div class="flex justify-between items-center">
 								<a href="<?= base_url() ?>blogs/article/<?= $article->uuid ?>" role="button" class="bg-cyan-600 text-white text-xs py-1 px-3 rounded-md">
 									<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
