@@ -68,7 +68,7 @@ class Agenda_model extends CI_Model
         $config['file_name'] = date("Ymdhis");
         $config['max_width'] = 1080;
         $config['min_width'] = 1080;
-        $config['max_height'] = 1080;
+        $config['max_height'] = 1350;
         $config['min_height'] = 1080;
         $config['max_size'] = 1000;
         $config['overwrite'] = TRUE;
