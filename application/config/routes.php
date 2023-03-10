@@ -67,6 +67,10 @@ $route['blogs/media/(:any)'] = 'about/media/$1';
 $route['article'] = 'article';
 $route['article/new'] = 'article/article_add';
 
+
+$route['media'] = 'media';
+$route['media/new'] = 'media/media_add';
+
 $route['auth'] = 'auth';
 
 $route['profile'] = 'auth/profile';

@@ -197,12 +197,12 @@
 		<?php if (!empty($medias)) { ?>
 			<div class="flex flex-row flex-wrap justify-center gap-5 my-8">
 				<?php foreach ($medias as $media) { ?>
-					<div class="bg-white shadow rounded-xl p-5 md:w-[400px] ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300">
+					<div class="bg-white shadow rounded-xl p-5 md:w-[400px] ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300 space-y-3">
 						<img src="<?= base_url() ?>uploads/<?= $media->image ?>" alt=<?= $media->title ?>" class="rounded-lg">
-						<h5 class="my-4 font-bold text-lg"><?= $media->title ?></h5>
-						<p class="text-sm text-gray-600"><?= $content = substr($media->description, 0, 200)  ?>...</p>
-						<div class="mt-4 text-sm flex align-center justify-between">
-							<a role="button"href="<?= base_url() ?>blogs/media/<?= $media->uuid ?>" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">
+						<h5 class="font-bold text-lg"><?= $media->title ?></h5>
+						<div class="text-sm text-gray-600"><?= $content = substr($media->description, 0, 150)  ?>...</div>
+						<div class="text-sm flex align-center justify-between">
+							<a role="button" href="<?= base_url() ?>blogs/media/<?= $media->uuid ?>" class="transition ease-in-out duration-300 bg-lp3i-200 hover:bg-lp3i-600 px-5 py-1 rounded-lg text-white">
 								<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 							</a>
 							<p class="text-gray-600 py-1"><?= date("d F Y", strtotime($media->date)); ?></p>

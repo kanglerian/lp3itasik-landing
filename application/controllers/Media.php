@@ -37,6 +37,34 @@ class Media extends CI_Controller
 		}
 	}
 
+	public function media_add()
+	{
+		$logged = $this->session->userdata('logged');
+		if ($logged == NULL) {
+			$this->session->set_flashdata('message', ['message' => 'Harap login terlebih dahulu!']);
+			redirect('auth');
+		} else {
+			$this->load->view('templates/header');
+			$this->load->view('pages/dashboard/media_add');
+			$this->load->view('templates/footer');
+		}
+	}
+
+	public function detail($uuid)
+	{
+		$logged = $this->session->userdata('logged');
+		if ($logged == NULL) {
+			$this->session->set_flashdata('message', ['message' => 'Harap login terlebih dahulu!']);
+			redirect('auth');
+		} else {
+			$data['media'] = $this->Media_model->get_record($uuid);
+			$this->load->view('templates/header');
+			$this->load->view('pages/dashboard/media_detail', $data);
+			$this->load->view('templates/footer');
+		}
+	}
+
+
 	public function update()
 	{
 		$logged = $this->session->userdata('logged');

@@ -3,33 +3,9 @@
     <a href="<?= base_url() ?>media">
       <h1 class="font-bold text-2xl">Media</h1>
     </a>
-    <p class="text-gray-500 text-sm">Fitur ini memungkinkan Anda untuk menambah, menghapus, dan mengedit agenda acara yang diadakan di Politeknik LP3I Kampus Tasikmalaya.</p>
+    <p class="text-gray-500 text-sm mb-2">Fitur ini memungkinkan Anda untuk menambah, menghapus, dan mengedit agenda acara yang diadakan di Politeknik LP3I Kampus Tasikmalaya.</p>
+    <a href="<?= base_url() ?>media/new" role="button" class="inline-block text-center text-white px-4 py-2 text-sm rounded bg-sky-500 md:hover:bg-sky-600"><i class="fa-solid fa-circle-plus"></i> Tambah Data</a>
   </div>
-  <form id="form" action="<?= base_url() ?>media/insert" class="flex flex-col md:flex-row md:items-start gap-4 py-3 px-2" method="post" enctype="multipart/form-data">
-    <div class="flex-1">
-      <div class="flex flex-col gap-2">
-        <input type="text" name="title" id="title" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" placeholder="Type title.." required>
-        <textarea rows="5" name="description" id="description" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" placeholder="Type description.." required></textarea>
-      </div>
-    </div>
-    <div class="flex-1">
-      <div class="flex flex-col gap-2">
-        <input type="date" name="date" id="date" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
-        <select name="status" id="status" class="w-full p-2 text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500" required>
-          <option>Pilih</option>
-          <option value="1">Aktif</option>
-          <option value="0">Tidak aktif</option>
-        </select>
-        <div>
-          <input type="file" name="image" id="image" class="w-full text-gray-700 border border-gray-300 rounded-md bg-gray-50 text-xs focus:ring-blue-500 focus:border-blue-500">
-          <small class="mt-2 text-xs text-gray-500 dark:text-gray-400"><span class="font-medium">Ketentuan:</span> 1280(px) x 720(px) maksimal 1MB (1000KB)</small>
-        </div>
-      </div>
-    </div>
-    <div>
-      <button type="submit" class="bg-cyan-600 text-white text-sm py-2 px-3 rounded-md"><i class="fa-solid fa-floppy-disk"></i> <span id="btnSubmit">Simpan</span></button>
-    </div>
-  </form>
   <div id="info" class="hidden flex p-4 mb-4 text-yellow-800 rounded-lg bg-yellow-50" role="alert">
     <i class="fa-solid fa-circle-info"></i>
     <div class="ml-3 text-sm font-medium">
@@ -50,7 +26,7 @@
       </button>
     </div>
   <?php } ?>
-  <div class="relative overflow-x-auto border border-gray-300 rounded-lg">
+  <div class="relative overflow-x-auto border border-gray-300 rounded-lg mt-5">
     <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
@@ -81,16 +57,15 @@
               </th>
               <th scope="row" class="px-6 py-4 font-medium text-gray-900 space-y-2">
                 <?= $media->title ?><br>
-                <p class="text-gray-500 font-normal text-xs text-justify"><?= substr($media->description, 0, 40) ?>...</p>
                 <span class="inline-block font-medium text-gray-500 text-xs"><?= date("d F Y", strtotime($media->date)) ?></span>
               </th>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->
-                <a role="button" href="<?= base_url() ?>media/change/<?= $media->id ?>" class="block md:inline text-center text-white px-2 py-1 text-sm rounded <?= $media->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $media->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>
+                <a role="button" href="<?= base_url() ?>media/change/<?= $media->id ?>" class="block md:inline-block text-center text-white px-2 py-1 text-sm rounded <?= $media->status == "1" ? 'bg-blue-600' : 'bg-red-600' ?>"><?= $media->status == "1" ? '<i class="fa-solid fa-toggle-on fa-1x"></i>' : '<i class="fa-solid fa-toggle-off fa-1x"></i>' ?></a>
                 <!-- Edit -->
-                <a role="button" onclick="editInformation(`<?= $media->id ?>`,`<?= $media->title ?>`,`<?= $media->description ?>`,`<?= $media->status ?>`,`<?= $media->date ?>`)" class="block md:inline text-center bg-amber-400 px-2 py-1 text-sm rounded text-white"><i class="fa-regular fa-pen-to-square"></i></a>
+                <a href="<?= base_url() ?>media/detail/<?= $media->uuid ?>" role="button" class="block md:inline-block text-center text-white px-2 py-1 mr-1 text-sm rounded bg-yellow-500"><i class="fa-solid fa-pen-to-square"></i>
                 <!-- Delete -->
-                <a role="button" data-modal-target="popup-modal<?= $media->id ?>" data-modal-toggle="popup-modal<?= $media->id ?>" class="block md:inline text-center bg-red-600 px-2 py-1 text-sm rounded text-white"><i class="fa-solid fa-trash"></i></a>
+                <a role="button" data-modal-target="popup-modal<?= $media->id ?>" data-modal-toggle="popup-modal<?= $media->id ?>" class="block md:inline-block text-center bg-red-600 px-2 py-1 text-sm rounded text-white"><i class="fa-solid fa-trash"></i></a>
                 <div id="popup-modal<?= $media->id ?>" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
                   <div class="relative w-full h-full max-w-md md:h-auto">
                     <div class="relative bg-white rounded-lg shadow">
@@ -122,22 +97,17 @@
   </div>
 </div>
 
+<script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
 <script>
-  const editInformation = (id, title, description, status, date) => {
-    let titleInput = document.getElementById('title');
+  CKEDITOR.replace('description');
+</script>
+<script>
+  const editDescription = () => {
+    let description = `Tulis artikel disini...`;
+    var editor = CKEDITOR.instances.description;
     let descriptionInput = document.getElementById('description');
-    let statusInput = document.getElementById('status');
-    let dateInput = document.getElementById('date');
-    let form = document.getElementById('form');
-    let btnSubmit = document.getElementById('btnSubmit');
-    let info = document.getElementById('info');
-    titleInput.value = title;
-    descriptionInput.value = description;
-    statusInput.value = status;
-    dateInput.value = date;
-
-    btnSubmit.innerHTML = "Ubah";
-    form.setAttribute("action", `<?= base_url() ?>media/update/${id}`);
-    info.classList.remove('hidden');
+    editor.setData(description);
+    descriptionInput.innerHTML = description;
   }
+  editDescription();
 </script>
