@@ -72,7 +72,7 @@
               </td>
               <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                 <?= $information->title ?><br>
-                <p class="text-gray-500 font-normal text-xs mt-2 text-justify"><?= $information->description ?></p>
+                <p class="text-gray-500 font-normal text-xs mt-2 text-justify"><?= substr($information->description, 0, 250) ?>...</p>
               </th>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->

@@ -92,7 +92,7 @@
               <th scope="row" class="px-6 py-4 font-medium text-gray-900">
                 <span><?= $program->level ?> <?= $program->title ?></span><br>
                 <span class="font-light text-gray-500"><?= $program->campus ?></span><br>
-                <p class="text-gray-500 font-normal text-xs mt-2 text-justify"><?= $program->description ?></p>
+                <p class="text-gray-500 font-normal text-xs mt-2 text-justify"><?= substr($program->description, 0, 40) ?>...</p>
               </th>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->

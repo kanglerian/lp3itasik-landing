@@ -79,9 +79,10 @@
               <th scope="row" class="px-6 py-4">
                 <img src="<?= base_url() ?>uploads/<?= $media->image ?>" class="w-44 rounded">
               </th>
-              <th scope="row" class="px-6 py-4 font-medium text-gray-900">
+              <th scope="row" class="px-6 py-4 font-medium text-gray-900 space-y-2">
                 <?= $media->title ?><br>
-                <p class="text-gray-500 font-normal text-xs mt-2 text-justify"><?= $media->description ?> | <span class="font-medium"><?= date("d F Y", strtotime($media->date)) ?></span></p>
+                <p class="text-gray-500 font-normal text-xs text-justify"><?= substr($media->description, 0, 40) ?>...</p>
+                <span class="inline-block font-medium text-gray-500 text-xs"><?= date("d F Y", strtotime($media->date)) ?></span>
               </th>
               <td colspan="2" class="space-y-2 px-6 py-4">
                 <!-- Toggle -->
