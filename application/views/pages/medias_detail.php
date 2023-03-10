@@ -1,6 +1,6 @@
 <style>
 	#media p a {
-		color: yellow;
+		color: #38bdf8;
 	}
 </style>
 <section class="my-14">
