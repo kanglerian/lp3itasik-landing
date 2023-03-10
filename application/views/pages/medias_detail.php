@@ -1,6 +1,7 @@
 <style>
 	#media p a {
-		color: #38bdf8;
+		color: #0284c7;
+		text-decoration: underline;
 	}
 </style>
 <section class="my-14">
