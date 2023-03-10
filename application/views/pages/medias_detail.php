@@ -1,34 +1,4 @@
 <style>
-	#article h1 {
-		font-size: 32px;
-	}
-
-	#article h2 {
-		font-size: 24px;
-	}
-
-	#article h3 {
-		font-size: 18px;
-	}
-
-	#article p {
-		font-size: 14px;
-		text-indent: 35px;
-		text-align: justify;
-	}
-
-	#article ol li {
-		font-size: 14px;
-		margin-left: 50px;
-		word-spacing: 13px;
-		list-style: decimal;
-	}
-
-	#article ul li {
-		margin-left: 30px;
-		word-spacing: -20px;
-		list-style: disc;
-	}
 </style>
 <section class="my-14">
 	<div class="container mx-auto px-4">
