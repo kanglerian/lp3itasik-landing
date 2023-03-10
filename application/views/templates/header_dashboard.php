@@ -47,3 +47,4 @@
         <hr>
         <a role="button" class="inline-block text-center mt-5 w-full px-4 py-2 bg-red-500 hover:bg-red-600 text-white transition ease-in-out rounded-lg" href="<?= base_url() ?>auth/logout"><i class="fa-solid fa-right-to-bracket"></i> Logout</a>
       </aside>
+    </div>
