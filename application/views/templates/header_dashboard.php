@@ -16,6 +16,7 @@
 
 <body class="bg-gray-50">
   <?php include('components/navbar.php'); ?>
+  <section class="container mx-auto px-4 py-3">
 
     <div class="mb-5 mt-10">
       <button id="btnAside" class="block font-bold font-base"><i class="fa-solid fa-bars mr-2"></i> Pengaturan</button>
