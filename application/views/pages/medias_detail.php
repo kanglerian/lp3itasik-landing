@@ -1,4 +1,7 @@
 <style>
+	#media p a {
+		color: yellow;
+	}
 </style>
 <section class="my-14">
 	<div class="container mx-auto px-4">
