@@ -54,7 +54,7 @@
 			<a href="https://virtualkampus.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 text-center hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-map-location-dot mr-1"></i>
 				<?= $this->session->userdata('language') == 'en' ? 'Virtual Campus' : 'Virtual Kampus' ?>
 			</a>
-			<a href="https://schoolarship.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-qrcode mr-1"></i>
+			<a href="https://schoolarship.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank" class="transition ease-in-out duration-300 inline py-2 px-8 text-cyan-700 text-center hover:text-white border border-cyan-700 hover:bg-cyan-700 rounded"><i class="fa-solid fa-qrcode mr-1"></i>
 				<?= $this->session->userdata('language') == 'en' ? 'Scholarship Check' : 'Cek Beasiswa' ?>
 			</a>
 		</div>
