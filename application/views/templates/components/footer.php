@@ -74,7 +74,7 @@
 						<li><a href="#">Career Center</a></li>
 						<li><a href="#">Sistem Akademik (SIAKAD)</a></li>
 						<li><a href="#">Learning Management System (LMS)</a></li>
-						<li><a href="#">Cek Beasiswa</a></li>
+						<li><a href="https://schoolarship.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank">Cek Beasiswa</a></li>
 					</ul>
 				</div>
 				<div>
