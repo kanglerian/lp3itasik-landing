@@ -19,7 +19,7 @@
 						<li><a href="#">Career Center</a></li>
 						<li><a href="#">Academic System (SIAKAD)</a></li>
 						<li><a href="#">Learning Management System (LMS)</a></li>
-						<li><a href="#">Scholarship Check</a></li>
+						<li><a href="https://schoolarship.politekniklp3i-tasikmalaya.ac.id/" role="button" target="_blank">Scholarship Check</a></li>
 					</ul>
 				</div>
 				<div>
