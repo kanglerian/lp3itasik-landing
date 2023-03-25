@@ -165,7 +165,7 @@
 							<img class="w-full object-cover rounded-lg" alt="<?= $main->title ?>" src="<?= base_url() ?>uploads/<?= $main->image ?>" />
 							<div class="absolute top-0 left-0 w-full h-0 flex flex-col justify-center items-center bg-lp3i-200 rounded-lg opacity-0 group-hover:h-full group-hover:opacity-95 duration-500">
 								<h1 class="text-lg text-white"><?= $main->level ?> <?= $main->title ?></h1>
-								<a role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
+								<a href="<?= base_url() ?>programs/<?= $politechnic->id ?>" role="button" class="mt-5 px-8 py-2 text-sm rounded-full bg-amber-400 hover:bg-amber-600 duration-300" href="#">
 									<?= $this->session->userdata('language') == 'en' ? 'View more' : 'Lihat selengkapnya' ?>
 								</a>
 							</div>
