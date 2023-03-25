@@ -57,6 +57,8 @@ $route['about/facilities'] = 'about/facilities';
 $route['about/organization'] = 'about/organization';
 
 $route['programs'] = 'about/programs';
+$route['programs/(:any)'] = 'about/program/$1';
+
 $route['students'] = 'about/students';
 $route['blogs'] = 'about/blogs';
 $route['blogs/articles'] = 'about/articles';

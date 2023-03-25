@@ -17,6 +17,7 @@ class About extends CI_Controller
 		$this->load->model('Documentation_model');
 		$this->load->model('Facility_model');
 		$this->load->model('Program_model');
+		$this->load->model('ProgramDesc_model');
 		$this->load->model('Organization_model');
 		$this->load->model('Student_model');
 	}
@@ -99,6 +100,20 @@ class About extends CI_Controller
 		$data['programs'] = $this->Program_model->get_active_records();
 		$this->load->view('templates/header');
 		$this->load->view('pages/programs', $data);
+		$this->load->view('templates/footer');
+	}
+
+	public function program($id)
+	{
+		$data['program'] = $this->Program_model->get_record($id);
+		$data['misi'] = $this->ProgramDesc_model->get_desc_record($id, 'misi');
+		$data['visi'] = $this->ProgramDesc_model->get_desc_record($id, 'visi');
+		$data['keunggulan'] = $this->ProgramDesc_model->get_desc_record($id, 'keunggulan');
+		$data['kompetensi'] = $this->ProgramDesc_model->get_desc_record($id, 'kompetensi');
+		$data['careers'] = $this->ProgramDesc_model->get_career_record($id);
+		$data['alumnis'] = $this->ProgramDesc_model->get_alumni_record($id);
+		$this->load->view('templates/header');
+		$this->load->view('pages/program_detail', $data);
 		$this->load->view('templates/footer');
 	}
 

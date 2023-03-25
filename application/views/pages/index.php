@@ -67,7 +67,7 @@
 			<div class="flex flex-wrap justify-center items-center gap-5">
 				<?php foreach ($benefits as $benefit) { ?>
 					<div class="text-center w-[400px]">
-						<div class="bg-white shadow-sm text-center p-4 rounded-lg ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300">
+						<div class="bg-white shadow-sm text-center p-4 rounded-lg transition ease-in-out delay-50 md:hover:-translate-y-1 md:hover:scale-105 duration-300">
 							<img src="<?= base_url() ?>uploads/<?= $benefit->image ?>" alt="<?= $benefit->title ?>" class="inline w-20 rounded-full">
 							<div class="mt-3 bg-gray-50 p-2 rounded">
 								<h5 class="font-bold text-cyan-700 text-base mb-1"><?= $benefit->title ?></h5>

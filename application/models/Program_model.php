@@ -14,6 +14,11 @@ class Program_model extends CI_Model
         $query = $this->db->get('programs');
         return $query->result();
     }
+    public function get_record($id)
+    {
+        $query = $this->db->get_where('programs', ['id' => $id]);
+        return $query->row();
+    }
 
     public function get_active_records($count = 0)
     {
