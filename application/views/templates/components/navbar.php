@@ -138,7 +138,7 @@
           </div>
         </li>
         <div class="py-2 md:p-0">
-          <a role="button" target="_blank" href="https://api.whatsapp.com/send?phone=6281313608558&text=Hallo%20Kak,%20Boleh%20minta%20informasi%20Pendaftaran%20Mahasiswa%20Politeknik%20LP3I%20Kampus%20Tasikmalaya%3F" class="transition ease-in-out duration-300 block md:inline py-2 px-4 text-white bg-cyan-700 hover:bg-cyan-800 rounded"><i class="fa-solid fa-headset mr-1"></i> Info PMB</a>
+          <a role="button" target="_blank" href="https://pmb.politekniklp3i-tasikmalaya.ac.id/" class="transition ease-in-out duration-300 block md:inline py-2 px-4 text-white bg-cyan-700 hover:bg-cyan-800 rounded"><i class="fa-solid fa-headset mr-1"></i> PMB Online</a>
         </div>
       </ul>
     </div>
