@@ -76,13 +76,8 @@ $query_builder = TRUE;
 $db['default'] = array(
 	'dsn'	=> '',
 	'hostname' => 'localhost',
-<<<<<<< HEAD:application/config/database-2.php
-	'username' => 'lp3itasik_marketing',
-	'password' => '0265juanda311766',
-=======
 	'username' => 'root',
-	'password' => '',
->>>>>>> 3d7af43bed7d34541cc4ac4fc523d85f9312c8a8:application/config/database-1.php
+	'password' => 'root',
 	'database' => 'lp3itasik_landing',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
