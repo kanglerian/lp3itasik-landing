@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Politeknik LP3I Kampus Tasikmalaya adalah perguruan tinggi swasta di Kota Tasikmalaya berbasis pendidikan vokasi yaitu 70% praktek dan 30% teori. Mahasiswa/i Politeknik LP3I Kampus Tasikmalaya di semester 6 akan ditempatkan bekerja oleh bagian Career Center di perusahaan relasi. Mandiri, tepat dan cepat kerja!">
-  <meta name="keywords" content="Kuliah, Penempatan Kerja, Kampus Vokasi, Beasiswa Pendidikan, Perguruan Tinggi, Politeknik, LP3I, Kota Tasikmalaya, Vokasi, Kuliah Praktek">
+  <meta name="keywords" content="Kuliah, Penempatan Kerja, Kampus Vokasi, Beasiswa Pendidikan, Perguruan Tinggi, Politeknik, LP3I, Kota Tasikmalaya, Vokasi, Kuliah Praktek, Indonesia, Tasikmalaya">
   <meta name="author" content="Politeknik LP3I Kampus Tasikmalaya">
 	<title>Politeknik LP3I Kampus Tasikmalaya</title>
 	<link rel="icon" type="image/x-icon" href="<?= base_url() ?>public/assets/favicon.png">
