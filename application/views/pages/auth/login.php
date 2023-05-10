@@ -7,11 +7,6 @@
   <div class="w-full md:w-1/3 bg-white p-6 shadow-lg rounded-xl transition ease-in-out md:hover:scale-105">
     <h1 class="font-bold text-xl text-gray-800">Sign In</h1>
     <p class="font-light text-sm text-gray-500 mt-1 mb-4">Please sign in to your account:</p>
-
-    <?php if ($this->session->userdata('username')) { ?>
-      <p><?= $this->session->userdata('username'); ?></p>
-      <p><?= $this->session->userdata('logged'); ?></p>
-    <?php } ?>
     
     <?php if ($this->session->flashdata('message')) { ?>
       <div id="alert" class="flex justify-between bg-red-50 text-red-800 px-3 py-2 mb-4 rounded-lg text-sm font-medium">

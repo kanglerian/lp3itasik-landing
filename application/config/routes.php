@@ -80,5 +80,8 @@ $route['profile'] = 'auth/profile';
 $route['banner'] = 'banner';
 $route['information'] = 'information';
 
+$route['program'] = 'program';
+$route['program/(:any)'] = 'program/show/$1';
+
 $route['404_override'] = 'unknown';
 $route['translate_uri_dashes'] = FALSE;

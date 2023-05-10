@@ -9,9 +9,9 @@ class ProgramDesc_model extends CI_Model
         $this->load->library('upload');
     }
 
-    public function get_desc_record($id,$misi)
+    public function get_desc_record($id,$type)
     {
-        $query = $this->db->get_where('program_desc', ['id_program' => $id,'type' => $misi]);
+        $query = $this->db->get_where('program_desc', ['id_program' => $id,'type' => $type]);
         return $query->result();
     }
 

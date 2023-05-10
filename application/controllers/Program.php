@@ -8,6 +8,7 @@ class Program extends CI_Controller
 	{
 		parent::__construct();
 		$this->load->model('Program_model');
+		$this->load->model('ProgramDesc_model');
 	}
 
 	public function index()
@@ -21,6 +22,27 @@ class Program extends CI_Controller
 			$this->load->view('templates/header_dashboard', $data);
 			$this->load->view('pages/dashboard/program', $data);
 			$this->load->view('templates/footer_dashboard');
+		}
+	}
+
+	public function show($id)
+	{
+		$logged = $this->session->userdata('logged');
+		if ($logged == NULL) {
+			$this->session->set_flashdata('message', ['message' => 'Harap login terlebih dahulu!']);
+			redirect('auth');
+		} else {
+			$data['program'] = $this->Program_model->get_record($id);
+			$data['visis'] = $this->ProgramDesc_model->get_desc_record($id,'visi');
+			$data['misis'] = $this->ProgramDesc_model->get_desc_record($id,'misi');
+			$data['keunggulans'] = $this->ProgramDesc_model->get_desc_record($id,'keunggulan');
+			if ($data['program'] != NULL) {
+				$this->load->view('templates/header');
+				$this->load->view('pages/dashboard/program_detail', $data);
+				$this->load->view('templates/footer');
+			}else{
+				return redirect('program');
+			}
 		}
 	}
 
